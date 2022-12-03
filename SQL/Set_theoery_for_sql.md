@@ -68,7 +68,7 @@ select name from countries
 
 ![image](https://user-images.githubusercontent.com/47908891/204125260-1fd8c1cf-696f-4d86-9272-47107e2731b3.png)
 
--cities that do not have the same name as a
+-cities that do not have the same name as countries
 ```sql
 select name from cities
 except
