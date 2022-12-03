@@ -23,11 +23,11 @@ using (code);
 
 -- Types of Relationship
 -- one to many relationship -- author table and books table
--- one to one relationshipt -- employee and brithday table
+-- one to one relationship -- employee and brithday table
 -- many to many relationship -- country and languages table
 
 -- Multiple join
--- when using multiple join the result of the first join as a table on itself which is joined by the third table
+-- when using multiple join the result of the first join acts as a table on itself which is joined by the third table
 SELECT c.name, p.year, p.fertility_rate, e.unemployment_rate
 FROM countries AS c
 INNER JOIN populations AS p
@@ -65,7 +65,7 @@ ORDER BY code DESC;
 
 -- Right join
 -- all the rows from right table and matching row from left
--- null values for empty record from right table
+-- null values for empty record from left table
 -- left join is more commonly used than right join as both can do same work
 SELECT countries.name AS country, languages.name AS language, percent
 FROM languages
@@ -96,7 +96,7 @@ ORDER BY region;
 
 -- Cross join
 -- Create all possible combination of records
--- no need to use on or using 
+-- no need to use on or using for condition
 select name, language
 from countries 
 cross join languages
@@ -113,9 +113,7 @@ SELECT
 FROM populations AS p1
 INNER JOIN populations AS p2
 ON p1.country_code = p2.country_code
-WHERE p1.year 
--- Filter such that p1.year is always five years before p2.year
-    =(p2.year-5)
+WHERE p1.year =(p2.year-5)
     
 -- here we first joined the table on itself and then eliminated the rows that are not required depending on our condition using where clause
 
