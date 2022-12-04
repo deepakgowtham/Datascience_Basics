@@ -4,24 +4,6 @@
 ```sql
 select count(distinct (country)) as count_distinct_countries from films
 ```
-
-## Operators
-
-- Arithmetic Operator
-
-- Comparison Operators
-
-![image](https://user-images.githubusercontent.com/47908891/205485678-e44b0eaf-4ee1-46f6-9b6c-bebff4452d90.png
-- Logical Operator
-  AND, OR, NOT,
-  BETWEEN(inclusive --results also include the begin and end values)
-
-## Filter
-- LIKE, NOT LIKE,
-  used with wild card characters
-  %  match zero, one or many characters
-  _  match single character
-
 ## Aggregate functions
 - AVG(), SUM(), MIN(), MAX(), COUNT()
 
@@ -32,6 +14,35 @@ select count(distinct (country)) as count_distinct_countries from films
 ### Count
 
 ![image](https://user-images.githubusercontent.com/47908891/205485908-4809d264-971e-4d33-9eac-8bf2f7e8f840.png)
+
+## Operators
+
+### Arithmetic Operator
+ +,-, *,/
+ 
+ ![image](https://user-images.githubusercontent.com/47908891/205486276-cf4764c9-acce-40bb-a7f4-e92709bd4e13.png)
+ ![image](https://user-images.githubusercontent.com/47908891/205486342-9f4a1170-7ab8-4e4a-a355-d6fd489c77a1.png)
+
+```sql
+SELECT count(deathdate) * 100.0 / count(*) AS percentage_dead
+FROM people;
+```
+
+ 
+### Comparison Operators
+
+![image](https://user-images.githubusercontent.com/47908891/205485678-e44b0eaf-4ee1-46f6-9b6c-bebff4452d90.png
+### Logical Operator
+  AND, OR, NOT,
+  BETWEEN(inclusive --results also include the begin and end values)
+
+## Filter
+- LIKE, NOT LIKE,
+  used with wild card characters
+  %  match zero, one or many characters
+  _  match single character
+
+
 
 
 ## Handling Null values
