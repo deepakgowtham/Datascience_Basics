@@ -88,10 +88,10 @@ GROUP BY region;
 SELECT name AS country, code, region, basic_unit
 FROM countries
 -- Join to currencies
-inner join currencies 
+full join currencies 
 USING (code)
-WHERE region = 'North America' 
-	OR name IS NULL
+-- Where region is North America or name is null
+WHERE region = 'North America' or name is NULl
 ORDER BY region;
 
 -- Cross join
