@@ -31,7 +31,8 @@ FROM people;
  
 ### Comparison Operators
 
-![image](https://user-images.githubusercontent.com/47908891/205485678-e44b0eaf-4ee1-46f6-9b6c-bebff4452d90.png
+![image](https://user-images.githubusercontent.com/47908891/205486637-2edd27f4-60c6-4ede-961c-9e4ce3815c64.png)
+
 ### Logical Operator
   AND, OR, NOT,
   BETWEEN(inclusive --results also include the begin and end values)
