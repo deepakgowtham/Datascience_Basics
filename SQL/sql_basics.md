@@ -58,16 +58,61 @@ select count(title) as count_language_known from films where language is not nul
  - we can also give negative decimal place which rounds the number left of decimal point eg round(41250, -3) = 41000
  - only works on numerical fields
 
-
+## Order by
+```sql
+select certification, release_year, title from films
+order by certification asc, release_year desc
+```
 ## Order of execution
 SQL is not executed in the order we write the code.
 
 - first **FROM**  table
+- group by (if present)
 - then **WHERE** condition
 - then **SELECT** (Alias is also executed here)
-- then grouping like order by, limit 
+- then grouping like order by,
+- then limit 
 
 As the alias the we mention in the select will not work in where clause because where is executed first in order of execution.
 
 ![image](https://user-images.githubusercontent.com/47908891/205485362-fbc838aa-5fa4-48f6-b475-dc97b8756260.png)
+
+
+
+
+## Group by
+- Using a aggregate function on by grouping variables into categories.
+
+```sql
+select release_year, avg(duration) as avg_duration from films
+group by release_year
+```
+
+### Filtering grouped data
+- cant filter aggregate function using where clause, it would result in error
+- Here **HAVING** should be used
+
+
+![image](https://user-images.githubusercontent.com/47908891/206704843-4fc87297-eb25-4bdb-a353-0021c01601d8.png)
+
+here the order of execution is
+- from 
+- where
+- group by
+- having
+- select 
+- order by
+- limit
+
+as in the order of execution where is executed first before group by and aggregation, so we cant filter aggregate using where clause so we need to use having
+
+![image](https://user-images.githubusercontent.com/47908891/206706241-38165ae3-4577-4c32-962e-250dc381dc70.png)
+```sql
+select country, count(distinct(certification)) as certification_count from films
+group by country
+having count(distinct(certification)) >10;
+```
+
+
+
 
