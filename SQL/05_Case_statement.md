@@ -38,6 +38,39 @@ WHERE m.hometeam_id = 8634;
 ![image](https://user-images.githubusercontent.com/47908891/208030094-4ee86f6e-11d8-44d0-8427-70bc0adef211.png)
 - If we dont use the where condition in the above query then matches of all the other teams will considered as Loss or Tie
 
+mulitple case statements together.
+```sql
+SELECT 
+	date,
+	-- Identify the home team as Barcelona or Real Madrid
+	case when hometeam_id = 8634 then 'FC Barcelona' 
+        else 'Real Madrid CF' end as home,
+    -- Identify the away team as Barcelona or Real Madrid
+	case when awayteam_id = 8634 then 'FC Barcelona' 
+        else 'Real Madrid CF' end as away
+FROM matches_spain
+WHERE (awayteam_id = 8634 OR hometeam_id = 8634)
+      AND (awayteam_id = 8633 OR hometeam_id = 8633);
+```
+Combining multiple case statements again.
+```sql
+SELECT 
+	date,
+	CASE WHEN hometeam_id = 8634 THEN 'FC Barcelona' 
+         ELSE 'Real Madrid CF' END as home,
+	CASE WHEN awayteam_id = 8634 THEN 'FC Barcelona' 
+         ELSE 'Real Madrid CF' END as away,
+	-- Identify all possible match outcomes
+	case when home_goal > away_goal and hometeam_id = 8634 then 'Barcelona win!'
+        WHEN home_goal > away_goal and hometeam_id = 8633 then 'Real Madrid win!'
+        WHEN home_goal < away_goal and awayteam_id = 8634 then 'Barcelona win!'
+        WHEN home_goal < away_goal and awayteam_id = 8633 then 'Real Madrid win!'
+        else 'Tie!' end as outcome
+FROM matches_spain
+WHERE (awayteam_id = 8634 OR hometeam_id = 8634)
+      AND (awayteam_id = 8633 OR hometeam_id = 8633);
+```
+
 
 ## Focusing on Else clause
 - if we dont mention any else condition the entries that dont meet the criteria are stored as null
@@ -47,7 +80,10 @@ Both the below queries produce identical results where null is included in the r
 - Should the else clause contain null or should it filter and leave the data which is null??
 - To filter the null values we can use the entire case statement in where clause without the alias 
 - here we dont need to filter the teams by id as well
-![image](https://user-images.githubusercontent.com/47908891/208031016-2813f49d-83fe-4601-b026-3d84c2ab6ed4.png)
+![image](https://user-images.githubusercontent.com/47908891/208035315-dd64719d-f9cd-4c41-97e7-13a1a0817b10.png)
+- we need to add **end is not null** to remove the null entries
+
+
 
 
 
