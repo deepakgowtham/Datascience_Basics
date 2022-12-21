@@ -83,7 +83,7 @@ Both the below queries produce identical results where null is included in the r
 ![image](https://user-images.githubusercontent.com/47908891/208035315-dd64719d-f9cd-4c41-97e7-13a1a0817b10.png)
 - we need to add **end is not null** to remove the null entries
 
-
+## Case statement with Aggregate Functions
 
 
 
