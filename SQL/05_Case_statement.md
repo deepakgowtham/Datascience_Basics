@@ -89,6 +89,20 @@ Both the below queries produce identical results where null is included in the r
 
 ![image](https://user-images.githubusercontent.com/47908891/210225196-e1346e43-26b9-4f2e-8609-16167f5c4f58.png)
 
+```sql
+SELECT 
+	c.name AS country,
+    -- Count matches in each of the 3 seasons
+	count(case when m.season = '2012/2013' then m.id end) AS matches_2012_2013,
+	count(case when m.season = '2013/2014' then m.id end) AS matches_2013_2014,
+	count(case when m.season = '2014/2015' then m.id end) AS matches_2014_2015
+FROM country AS c
+LEFT JOIN match AS m
+ON c.id = m.country_id
+-- Group by country name alias
+group by c.name;
+```
+
 when using count the return part(THEN part) doesnt matter
 
 we can use sum, avg as well but we need return the exact coulmn for which need the calcuation.
@@ -97,7 +111,21 @@ we can use sum, avg as well but we need return the exact coulmn for which need t
 ![image](https://user-images.githubusercontent.com/47908891/210225718-6a6bc4db-7f5c-4e2d-a483-cf5f59e8e7f7.png)
 
 
-
+```sql
+SELECT 
+	c.name AS country,
+    -- Round the percentage of tied games to 2 decimal points
+	round(avg(CASE WHEN m.season='2013/2014' AND m.home_goal = m.away_goal THEN 1
+			 WHEN m.season='2013/2014' AND m.home_goal != m.away_goal THEN 0
+			 END),2) AS pct_ties_2013_2014,
+	round(avg(CASE WHEN m.season='2014/2015' AND m.home_goal = m.away_goal THEN 1
+			 WHEN m.season='2014/2015' AND m.home_goal != m.away_goal THEN 0
+			 END),2) AS pct_ties_2014_2015
+FROM country AS c
+LEFT JOIN matches AS m
+ON c.id = m.country_id
+GROUP BY country;
+```
 
  
 
