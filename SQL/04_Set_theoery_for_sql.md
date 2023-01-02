@@ -58,7 +58,7 @@ select name from countries
 
 
 ### Comparing inner join and intersect
-- if the left table had duplicates inner join will carry it to result where as uninon will not
+- if the left table had duplicates inner join will carry it to result where as intersect will not
 - both have different use cases, care should be taken when choosing them
 
 ![image](https://user-images.githubusercontent.com/47908891/204125106-d3592996-4e06-4c38-8ed0-4c4b5ac2ea5f.png)
