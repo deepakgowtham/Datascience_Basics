@@ -84,6 +84,22 @@ Both the below queries produce identical results where null is included in the r
 - we need to add **end is not null** to remove the null entries
 
 ## Case statement with Aggregate Functions
+- case statement can be used to aggregate data based on result of a logical test
+- create a summary table
+
+![image](https://user-images.githubusercontent.com/47908891/210225196-e1346e43-26b9-4f2e-8609-16167f5c4f58.png)
+
+when using count the return part(THEN part) doesnt matter
+
+we can use sum, avg as well but we need return the exact coulmn for which need the calcuation.
+![image](https://user-images.githubusercontent.com/47908891/210225591-b60e29e9-220a-4d5d-891b-1ec10a473293.png)
+
+![image](https://user-images.githubusercontent.com/47908891/210225718-6a6bc4db-7f5c-4e2d-a483-cf5f59e8e7f7.png)
+
+
+
+
+ 
 
 
 
