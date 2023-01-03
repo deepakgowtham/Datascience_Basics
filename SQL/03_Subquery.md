@@ -69,6 +69,9 @@ LIMIT 9;
 - subquery is used as a temporary table and then select from it
 - Subqueries inside FROM can help us select columns from multiple tables in a single query
 
+![image](https://user-images.githubusercontent.com/47908891/210322639-67bf26bd-54ae-46d8-bbfe-12f63da8ab46.png)
+
+
 ![image](https://user-images.githubusercontent.com/47908891/205438881-9fb37e0f-c84b-4f86-8e70-eb5f9e2b6702.png)
 
 - here duplicates are shown in the first if we use distinct duplicates are not shown
