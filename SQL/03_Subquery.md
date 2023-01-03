@@ -44,8 +44,14 @@ and code not in
 ```
 
 ## Subqueries in select 
+![image](https://user-images.githubusercontent.com/47908891/210324793-7932e503-e7ea-402e-b75a-9816807df43d.png)
+
 - subquery in select can be used instead of group by if the data need to group by is present in another table
 - both the queries produce same result.
+
+![image](https://user-images.githubusercontent.com/47908891/210324944-5ebcbef6-5578-4e0f-8753-be9e88590857.png)
+
+
 ```sql
 -- Find top nine countries with the most cities
 select countries.name as country, count(cities.name) as cities_num
