@@ -92,6 +92,15 @@ select local_name , sub.lang_num
 ORDER BY lang_num DESC;
 ```
 
+## Correlated Subquery
+- Correlated subqueries are subqueries that reference one or more columns in the main query. Correlated subqueries depend on information in the main query to run, and thus, cannot be executed on their own.
+
+- Correlated subqueries are evaluated in SQL once per row of data retrieved -- a process that takes a lot more computing power and time than a simple subquery.
+
+![image](https://user-images.githubusercontent.com/47908891/210346471-207533cc-a5a1-40b4-afac-dde482aa42b7.png)
+![image](https://user-images.githubusercontent.com/47908891/210346499-bb05bb61-2b5a-436e-ac4a-1b5b12a62546.png)
+![image](https://user-images.githubusercontent.com/47908891/210346554-c45a7b2e-f242-41ae-b0fe-7e0c5eed42fc.png)
+
 
 
 
