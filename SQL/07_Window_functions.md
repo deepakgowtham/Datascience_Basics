@@ -9,7 +9,7 @@ Non Aggregate column
 We usually subqueries for this
 
 ![image](https://user-images.githubusercontent.com/47908891/213381495-5ffc242e-79eb-47b3-ab91-38cb466eb481.png)
-
+- Unlike a subquery in SELECT, your window function will apply the filter that you include in your WHERE clause
 ## Over Clause 
 ![image](https://user-images.githubusercontent.com/47908891/213381624-87c67938-df34-41d4-857b-40b6f9a12fb3.png)
 
@@ -35,8 +35,24 @@ LEFT JOIN country AS c ON m.country_id = c.id;
 - default order is ascending, to change it we can include DESC inside the OVER
 
 ![image](https://user-images.githubusercontent.com/47908891/213382377-30442194-623f-41d3-9ccb-cacb3ccb4c54.png)
-
+```sql
+SELECT 
+	-- Select the league name and average goals scored
+	l.name AS league,
+    avg(m.home_goal + m.away_goal) AS avg_goals,
+    -- Rank leagues in descending order by average goals
+    RANK() OVER(Order by avg(m.home_goal + m.away_goal) desc) AS league_rank
+FROM league AS l
+LEFT JOIN match AS m 
+ON l.id = m.country_id
+WHERE m.season = '2011/2012'
+GROUP BY l.name
+-- Order the query by the rank you created
+order by league_rank;
+```
 ## Differences in window function
 - window functions are processed after the entire query except the final ORDER BY statement. Thus, the window function uses the result set to calculate information, as opposed to using the database directly.
 -  it's important to know that window functions are available in PostgreSQL, Oracle, MySQL, but not in SQLite.
 - 
+
+## OVER with a partition
