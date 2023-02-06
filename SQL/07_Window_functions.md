@@ -56,3 +56,41 @@ order by league_rank;
 - 
 
 ## OVER with a partition
+- Partition results over a particular column(category)
+- calculate different aggregate values within one column of data, and pass them down a data set, instead of having to calculate them in different columns.
+![image](https://user-images.githubusercontent.com/47908891/216971812-0f415cb1-f2f4-4e78-ac13-f3e3f8efec74.png)
+
+In below example each row has different average.
+![image](https://user-images.githubusercontent.com/47908891/216972143-be5fe303-5d1f-4b1d-b0ff-c2fe5e47ef97.png)
+
+```sql
+SELECT 
+	date,
+	season,
+	home_goal,
+	away_goal,
+	CASE WHEN hometeam_id = 8673 THEN 'home' 
+         ELSE 'away' END AS warsaw_location,
+	-- Calculate average goals partitioned by season and month
+    avg(home_goal) over(partition by  season, 
+         	EXTRACT(month FROM date)) AS season_mo_home,
+    avg(away_goal) over(partition by season, 
+            EXTRACT(month FROM date)) AS season_mo_away
+FROM match
+WHERE 
+	hometeam_id = 8673
+    OR awayteam_id = 8673
+ORDER BY (home_goal + away_goal) DESC;
+
+```
+## Sliding Windows
+- window functions can also be used to calculate information that changes with each subsequent row in a data set.
+- Sliding windows are functions that perform calculations relative to the current row of a data set
+
+![image](https://user-images.githubusercontent.com/47908891/216981264-8565caf2-2399-4327-8359-38404975c492.png)
+
+![image](https://user-images.githubusercontent.com/47908891/216981432-c9442eaf-d29e-4970-b713-d8c15012355e.png)
+
+![image](https://user-images.githubusercontent.com/47908891/216981536-fc57b548-f767-4576-9927-571fd4597e85.png)
+
+
