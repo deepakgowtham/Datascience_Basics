@@ -93,4 +93,18 @@ ORDER BY (home_goal + away_goal) DESC;
 
 ![image](https://user-images.githubusercontent.com/47908891/216981536-fc57b548-f767-4576-9927-571fd4597e85.png)
 
-
+```sql
+SELECT 
+	date,
+	home_goal,
+	away_goal,
+    -- Create a running total and running average of home goals
+    sum(home_goal) over(ORDER BY date 
+         ROWS BETWEEN UNBOUNDED  PRECEDING AND CURRENT ROW) AS running_total,
+    avg(home_goal) OVER(ORDER BY date 
+         ROWS BETWEEN UNBOUNDED  PRECEDING AND CURRENT ROW) AS running_avg
+FROM match
+WHERE 
+	hometeam_id = 9908 
+	AND season = '2011/2012';
+```
