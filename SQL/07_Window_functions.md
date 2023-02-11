@@ -1,6 +1,10 @@
-# Window Fucntions
+# Window Functions
+
+![image](https://user-images.githubusercontent.com/47908891/218248649-19ec7f47-f775-4048-81e3-ab8b4e3cb493.png)
+
 - If we need to columns that are not aggregate, we need to use subquery but instead of that we can use window function
 ![image](https://user-images.githubusercontent.com/47908891/213381331-2c65a47e-d113-4c03-9f49-9a7f3959c5da.png)
+
 
 Non Aggregate column
 
@@ -9,8 +13,41 @@ Non Aggregate column
 We usually subqueries for this
 
 ![image](https://user-images.githubusercontent.com/47908891/213381495-5ffc242e-79eb-47b3-ab91-38cb466eb481.png)
-- Unlike a subquery in SELECT, your window function will apply the filter that you include in your WHERE clause
+
+- Unlike a subquery in SELECT, your window function will calculate the aggregate from the result dataset that is obtained and not on the entire table.
+## Row number
+
+- Basic operation for which window function is useful for is Row Number.
+- Row number acts as the index
+- the row number can be used to call specific row.
+
+![image](https://user-images.githubusercontent.com/47908891/218248762-7d4007b1-4905-4e4a-8c2b-30e7ebcfcd63.png)
+
+### Row number in ascending order.
+
+```sql
+SELECT
+  Year,
+
+  -- Assign numbers to each year
+  row_number() over() AS Row_N
+FROM (
+  SELECT distinct year
+  FROM Summer_Medals
+  ORDER BY Year ASC
+) AS Years
+ORDER BY Year ASC;
+
+```
+
+
 ## Over Clause 
+- The OVER clause indicates that a function is a window function. The parentheses after OVER can be empty, just like the previous example, but they can also contain subclauses
+
+![image](https://user-images.githubusercontent.com/47908891/218248836-48c1aff8-0511-4205-a2bb-eb220074b769.png)
+- These subclauses radically change the window function's output
+
+
 ![image](https://user-images.githubusercontent.com/47908891/213381624-87c67938-df34-41d4-857b-40b6f9a12fb3.png)
 
 - Here the over clause passes the aggregate value over the existing result set
@@ -53,7 +90,9 @@ order by league_rank;
 ## Differences in window function
 - window functions are processed after the entire query except the final ORDER BY statement. Thus, the window function uses the result set to calculate information, as opposed to using the database directly.
 -  it's important to know that window functions are available in PostgreSQL, Oracle, MySQL, but not in SQLite.
-- 
+- Unlike GROUP BY results, window functions don't reduce the number of rows in the output.
+- Window functions can fetch values from other rows into the table, whereas GROUP BY functions cannot.
+- Window functions can calculate running totals and moving averages, whereas GROUP BY functions cannot.
 
 ## OVER with a partition
 - Partition results over a particular column(category)
