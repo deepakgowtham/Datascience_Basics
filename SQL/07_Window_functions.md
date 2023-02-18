@@ -15,30 +15,7 @@ We usually subqueries for this
 ![image](https://user-images.githubusercontent.com/47908891/213381495-5ffc242e-79eb-47b3-ab91-38cb466eb481.png)
 
 - Unlike a subquery in SELECT, your window function will calculate the aggregate from the result dataset that is obtained and not on the entire table.
-## Row number
 
-- Basic operation for which window function is useful for is Row Number.
-- Row number acts as the index
-- the row number can be used to call specific row.
-
-![image](https://user-images.githubusercontent.com/47908891/218248762-7d4007b1-4905-4e4a-8c2b-30e7ebcfcd63.png)
-
-### Row number in ascending order.
-
-```sql
-SELECT
-  Year,
-
-  -- Assign numbers to each year
-  row_number() over() AS Row_N
-FROM (
-  SELECT distinct year
-  FROM Summer_Medals
-  ORDER BY Year ASC
-) AS Years
-ORDER BY Year ASC;
-
-```
 
 
 ## Over Clause 
@@ -65,6 +42,85 @@ SELECT
 FROM match AS m
 LEFT JOIN country AS c ON m.country_id = c.id;
 ```
+## Row number
+
+- Basic operation for which window function is useful for is Row Number.
+- Row number acts as the index
+- the row number can be used to call specific row.
+
+![image](https://user-images.githubusercontent.com/47908891/218248762-7d4007b1-4905-4e4a-8c2b-30e7ebcfcd63.png)
+
+### Row number in ascending order.
+
+```sql
+SELECT
+  Year,
+
+  -- Assign numbers to each year
+  row_number() over() AS Row_N
+FROM (
+  SELECT distinct year
+  FROM Summer_Medals
+  ORDER BY Year ASC
+) AS Years
+ORDER BY Year ASC;
+
+```
+
+### Order by (subclause of over)
+- change the order of row number ascending or descending 
+- can order by multiple columns as well
+- You can ORDER both inside and outside OVER at the same time. In this query, row numbers are assigned based on the year and the event, but the ordering outside OVER orders by country and row. How will these two orders be executed? First, ROW_NUMBER will assign numbers based on the order within OVER. So the row numbers are given after sorting the table by year and event. After that, the ORDER outside of OVER takes over, and sorts the results of the table by Country and row number. Notice that the first row in the result isn't the row with number 1, because the two orders are based on different columns. From that, you can conclude that the ORDER inside OVER takes effect before the ORDER outside of it.
+ 
+ ```sql
+ WITH Athlete_Medals AS (
+  SELECT
+    -- Count the number of medals each athlete has earned
+    Athlete,
+    COUNT(*) AS Medals
+  FROM Summer_Medals
+  GROUP BY Athlete)
+
+SELECT
+  -- Number each athlete by how many medals they've earned
+  athlete,
+  row_number() OVER (ORDER BY medals DESC) AS Row_N
+FROM Athlete_Medals
+ORDER BY Medals DESC;
+```
+
+## LAG to find Reigning Chamption
+- reigning champion = who won in both previous year and current year competition
+- Form a new column containing champions from previous year.
+
+ ![image](https://user-images.githubusercontent.com/47908891/219857017-e1353767-ca03-46a0-bcce-fb5cf7a8db45.png)
+ 
+ ![image](https://user-images.githubusercontent.com/47908891/219857068-54af8dfb-a18e-4906-a875-d3ffb8f4fce9.png)
+
+- as the first row doesnt contain previous year the last champion column is null.
+
+```sql
+WITH Weightlifting_Gold AS (
+  SELECT
+    -- Return each year's champions' countries
+    Year,
+    Country AS champion
+  FROM Summer_Medals
+  WHERE
+    Discipline = 'Weightlifting' AND
+    Event = '69KG' AND
+    Gender = 'Men' AND
+    Medal = 'Gold')
+
+SELECT
+  Year, Champion,
+  -- Fetch the previous year's champion
+  lag(Champion, 1) OVER
+    (order by year ASC) AS Last_Champion
+FROM Weightlifting_Gold
+ORDER BY Year ASC;
+```
+
 
 ## Rank
 - Creates a new column numbering your dataset from highest to lowest or lowest to highest
