@@ -150,9 +150,12 @@ order by league_rank;
 - Window functions can fetch values from other rows into the table, whereas GROUP BY functions cannot.
 - Window functions can calculate running totals and moving averages, whereas GROUP BY functions cannot.
 
-## OVER with a partition
+## Partition by
 - Partition results over a particular column(category)
 - calculate different aggregate values within one column of data, and pass them down a data set, instead of having to calculate them in different columns.
+
+- When we use row number and partition by each partition row will start from 1 
+
 ![image](https://user-images.githubusercontent.com/47908891/216971812-0f415cb1-f2f4-4e78-ac13-f3e3f8efec74.png)
 
 In below example each row has different average.
@@ -177,6 +180,27 @@ WHERE
     OR awayteam_id = 8673
 ORDER BY (home_goal + away_goal) DESC;
 
+```
+
+```sql
+WITH Athletics_Gold AS (
+  SELECT DISTINCT
+    Gender, Year, Event, Country
+  FROM Summer_Medals
+  WHERE
+    Year >= 2000 AND
+    Discipline = 'Athletics' AND
+    Event IN ('100M', '10000M') AND
+    Medal = 'Gold')
+
+SELECT
+  Gender, Year, Event,
+  Country AS Champion,
+  -- Fetch the previous year's champion by gender and event
+  lag(country) OVER (partition by gender, event
+            ORDER BY Year ASC) AS Last_Champion
+FROM Athletics_Gold
+ORDER BY Event ASC, Gender ASC, Year ASC;
 ```
 ## Sliding Windows
 - window functions can also be used to calculate information that changes with each subsequent row in a data set.
