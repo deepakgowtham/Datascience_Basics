@@ -120,6 +120,35 @@ SELECT
 FROM Weightlifting_Gold
 ORDER BY Year ASC;
 ```
+## Four fetching fuctions
+
+![image](https://user-images.githubusercontent.com/47908891/219933471-ee10aa6a-4b2a-44ca-9492-5f098cb91e39.png)
+
+
+```sql
+
+SELECT
+  -- For each year, fetch the current and future medalists
+  year,
+  Athlete,
+  lead(Athlete,3) OVER (ORDER BY year ASC) AS Future_Champion
+FROM Discus_Medalists
+ORDER BY Year ASC;
+
+SELECT
+  Year,
+  City,
+  -- Get the last city in which the Olympic games were held
+  last_value(city) OVER (
+   ORDER BY year ASC
+   RANGE BETWEEN
+     UNBOUNDED PRECEDING AND
+     UNBOUNDED FOLLOWING
+  ) AS Last_City
+FROM Hosts
+ORDER BY Year ASC;
+```
+
 
 
 ## Rank
