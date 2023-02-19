@@ -268,19 +268,77 @@ GROUP BY Third
 ORDER BY Third ASC;
 
 ```
+## Running Aggregates
+- when we use the aggregate function along with window function it becomes running aggregates
+- it is used to calculate the cumulative sum, cumulative average, running max (max till the current row)
+
+Running Max
+
+![image](https://user-images.githubusercontent.com/47908891/219934926-50616794-621c-4452-bff9-20dfd92c6caf.png)
+
+Can be also combined with Partition by
+
+![image](https://user-images.githubusercontent.com/47908891/219934981-b4f104c7-ca25-4f74-972d-847d61364563.png)
+
+- the maximum medals earned so far for each country, ordered by year in ascending order.
+```sql
+WITH Country_Medals AS (
+  SELECT
+    Year, Country, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country IN ('CHN', 'KOR', 'JPN')
+    AND Medal = 'Gold' AND Year >= 2000
+  GROUP BY Year, Country)
+
+SELECT
+  -- Return the max medals earned so far per country
+  year,
+  country,
+  medals,
+  max(medals) OVER (PARTITION BY country
+                ORDER BY year ASC) AS Max_Medals
+FROM Country_Medals
+ORDER BY Country ASC, Year ASC;
+```
 
 
 ## Sliding Windows
-- window functions can also be used to calculate information that changes with each subsequent row in a data set.
+- window functions  can also be used to calculate information that changes with each subsequent row in a data set.
 - Sliding windows are functions that perform calculations relative to the current row of a data set
+- Always starts with ROWS BETWEEN or RANGE BETWEEN
+- Frames (sliding window) enable you to change the behavior of a window function by defining what rows the window function takes as input.
+- Frames allow you to restrict the rows passed as input to your window function to a sliding window for you to define the start and finish.
+- Frames allow you to "peek" forwards or backward without first using the relative fetching functions, LAG and LEAD, to fetch previous rows' values into the current row.
+
+Adding a frame to your window function allows you to calculate "moving" metrics, inputs of which slide from row to row.
 
 ![image](https://user-images.githubusercontent.com/47908891/216981264-8565caf2-2399-4327-8359-38404975c492.png)
+
+![image](https://user-images.githubusercontent.com/47908891/219935509-2cdb4aee-c3f8-44d5-80a5-3fc28a93a190.png)
+
 
 ![image](https://user-images.githubusercontent.com/47908891/216981432-c9442eaf-d29e-4970-b713-d8c15012355e.png)
 
 ![image](https://user-images.githubusercontent.com/47908891/216981536-fc57b548-f767-4576-9927-571fd4597e85.png)
 
+- here the max is chaning in the max_medals_last column as the data is compared between previous row and current row
+
+![image](https://user-images.githubusercontent.com/47908891/219935578-2bb38d80-d97d-46c8-b2d7-c1bcb0a51e8e.png)
+
+
 ```sql
+SELECT
+  -- Select each year's medals
+  year,
+  Medals,
+  -- Get the max of the current and next years'  medals
+  max(Medals) OVER (ORDER BY year ASC
+             ROWS BETWEEN current row
+             AND 1 following) AS Max_Medals
+FROM Scandinavian_Medals
+ORDER BY Year ASC;
+
 SELECT 
 	date,
 	home_goal,
@@ -295,3 +353,111 @@ WHERE
 	hometeam_id = 9908 
 	AND season = '2011/2012';
 ```
+
+![image](https://user-images.githubusercontent.com/47908891/219935913-1be3a4a2-7665-4622-b416-8e5f7aadc4c5.png)
+
+```sql
+SELECT
+  Year, Country, Medals,
+  -- Calculate each country's 3-game moving total
+  avg(medals) OVER
+    (PARTITION BY country
+     ORDER BY Year ASC
+     ROWS BETWEEN
+     2 preceding AND current row) AS Medals_MA
+FROM Country_Medals
+ORDER BY Country ASC, Year ASC;
+```
+
+### Range between
+- considers duplicate as a same entity
+- not generally preferred when compared to rows between
+
+![image](https://user-images.githubusercontent.com/47908891/219936055-0c0e3ae6-a091-4334-90e5-8311f83a5786.png)
+
+
+
+## Transform tables with window functions
+
+### Pivot query Cross tab
+- should import tablefunc
+-
+![image](https://user-images.githubusercontent.com/47908891/219937793-4c7f8321-06a5-4813-901c-51543eb1d817.png)
+
+```sql
+CREATE EXTENSION IF NOT EXISTS tablefunc;
+
+SELECT * FROM CROSSTAB($$
+  SELECT
+    Gender, Year, Country
+  FROM Summer_Medals
+  WHERE
+    Year IN (2008, 2012)
+    AND Medal = 'Gold'
+    AND Event = 'Pole Vault'
+  ORDER By Gender ASC, Year ASC;
+-- Fill in the correct column names for the pivoted table
+$$) AS ct (Gender VARCHAR,
+           "2008" VARCHAR,
+           "2012" VARCHAR)
+
+ORDER BY Gender ASC;
+
+
+```
+
+```sql
+CREATE EXTENSION IF NOT EXISTS tablefunc;
+
+SELECT * FROM CROSSTAB($$
+  WITH Country_Awards AS (
+    SELECT
+      Country,
+      Year,
+      COUNT(*) AS Awards
+    FROM Summer_Medals
+    WHERE
+      Country IN ('FRA', 'GBR', 'GER')
+      AND Year IN (2004, 2008, 2012)
+      AND Medal = 'Gold'
+    GROUP BY Country, Year)
+
+  SELECT
+    Country,
+    Year,
+    RANK() OVER
+      (PARTITION BY Year
+       ORDER BY Awards DESC) :: INTEGER AS rank
+  FROM Country_Awards
+  ORDER BY Country ASC, Year ASC;
+-- Fill in the correct column names for the pivoted table
+$$) AS ct (Country VARCHAR,
+           "2004" INTEGER,
+           "2008" INTEGER,
+           "2012" INTEGER)
+
+Order by Country ASC;
+```
+
+### ROLLUP
+
+- To calculate the group total and grand total together
+- ROLLUP is a sub clause of GROUP BY
+- it is hierarchical
+![image](https://user-images.githubusercontent.com/47908891/219938174-b1d8b4a7-7689-453a-8ab9-5f534242d442.png)
+
+![image](https://user-images.githubusercontent.com/47908891/219938197-693e1528-7bca-41af-a41a-0368fe73c8ea.png)
+
+![image](https://user-images.githubusercontent.com/47908891/219938498-f39b3937-d70f-455f-9b17-cf8ba182c5bb.png)
+
+### CUBE
+- similar to rollup but not hierarchical
+
+![image](https://user-images.githubusercontent.com/47908891/219938545-dcebccb9-6469-49af-b429-6e7702c91950.png)
+![image](https://user-images.githubusercontent.com/47908891/219938575-e0e22e00-7e2b-4f80-9545-9325c492af37.png)
+![image](https://user-images.githubusercontent.com/47908891/219938641-6042365a-1c33-4f80-85b6-f268a633d1e1.png)
+
+
+
+
+
