@@ -444,6 +444,8 @@ Order by Country ASC;
 - To calculate the group total and grand total together
 - ROLLUP is a sub clause of GROUP BY
 - it is hierarchical
+- if we use rollup for both the columns it will produce grand total.
+- 
 ![image](https://user-images.githubusercontent.com/47908891/219938174-b1d8b4a7-7689-453a-8ab9-5f534242d442.png)
 
 ![image](https://user-images.githubusercontent.com/47908891/219938197-693e1528-7bca-41af-a41a-0368fe73c8ea.png)
@@ -452,10 +454,24 @@ Order by Country ASC;
 
 ### CUBE
 - similar to rollup but not hierarchical
+- if we want total for both the column level here country level and medal level total also includes grand total
 
 ![image](https://user-images.githubusercontent.com/47908891/219938545-dcebccb9-6469-49af-b429-6e7702c91950.png)
 ![image](https://user-images.githubusercontent.com/47908891/219938575-e0e22e00-7e2b-4f80-9545-9325c492af37.png)
 ![image](https://user-images.githubusercontent.com/47908891/219938641-6042365a-1c33-4f80-85b6-f268a633d1e1.png)
+
+
+### coalese
+
+![image](https://user-images.githubusercontent.com/47908891/219942018-ad60dd40-0718-4e83-b6f2-50fe4d0dcff1.png)
+
+![image](https://user-images.githubusercontent.com/47908891/219942037-f4ce4ebf-9ebb-4c96-b499-14e36c14169d.png)
+
+### String_agg
+
+![image](https://user-images.githubusercontent.com/47908891/219942100-808f0058-725f-4000-ba9b-2a3f691b1085.png)
+
+![image](https://user-images.githubusercontent.com/47908891/219942132-1f8c9765-2181-4d16-8715-290d8325444a.png)
 
 
 
