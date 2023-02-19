@@ -172,6 +172,13 @@ GROUP BY l.name
 -- Order the query by the rank you created
 order by league_rank;
 ```
+### RANK function types
+![image](https://user-images.githubusercontent.com/47908891/219933773-08ff243c-7e74-47dd-a366-0976bfbe20fd.png)
+
+![image](https://user-images.githubusercontent.com/47908891/219933856-ab6ed4fb-f351-4f0c-a6e2-283a5f12fa0e.png)
+
+
+
 ## Differences in window function
 - window functions are processed after the entire query except the final ORDER BY statement. Thus, the window function uses the result set to calculate information, as opposed to using the database directly.
 -  it's important to know that window functions are available in PostgreSQL, Oracle, MySQL, but not in SQLite.
@@ -231,6 +238,38 @@ SELECT
 FROM Athletics_Gold
 ORDER BY Event ASC, Gender ASC, Year ASC;
 ```
+
+## Paging 
+
+![image](https://user-images.githubusercontent.com/47908891/219934194-91b7a1a5-7a23-4bc8-b2b2-92943d7374cf.png)
+
+![image](https://user-images.githubusercontent.com/47908891/219934243-2e4b7f2d-f718-45a3-8f13-beda05a9e835.png)
+
+```sql
+WITH Athlete_Medals AS (
+  SELECT Athlete, COUNT(*) AS Medals
+  FROM Summer_Medals
+  GROUP BY Athlete
+  HAVING COUNT(*) > 1),
+  
+  Thirds AS (
+  SELECT
+    Athlete,
+    Medals,
+    NTILE(3) OVER (ORDER BY Medals DESC) AS Third
+  FROM Athlete_Medals)
+  
+SELECT
+  -- Get the average medals earned in each third
+  third,
+  avg(medals) AS Avg_Medals
+FROM Thirds
+GROUP BY Third
+ORDER BY Third ASC;
+
+```
+
+
 ## Sliding Windows
 - window functions can also be used to calculate information that changes with each subsequent row in a data set.
 - Sliding windows are functions that perform calculations relative to the current row of a data set
