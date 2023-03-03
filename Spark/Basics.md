@@ -39,3 +39,12 @@ print(my_spark)
 ```python
 print(spark.catalog.listTables())
 ```
+
+## To Pandas
+- Convert pyspark to pandas dataframe
+```python
+query = "SELECT origin, dest, COUNT(*) as N FROM flights GROUP BY origin, dest"
+flight_counts = spark.sql(query)
+pd_counts = flight_counts.toPandas()
+```
+
