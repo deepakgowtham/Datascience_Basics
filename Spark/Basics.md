@@ -76,5 +76,11 @@ spark_temp.createOrReplaceTempView('temp')
 print(spark.catalog.listTables())
 ```
 
+## Read a csv file directly
+
+```python
+airports = spark.read.csv(file_path, header=True)
+```
+
 
 
