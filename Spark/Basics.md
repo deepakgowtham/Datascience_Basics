@@ -56,6 +56,9 @@ pd_counts = flight_counts.toPandas()
 -  **.createTempView()** Spark DataFrame method, which takes as its only argument the name of the temporary table you'd like to register. This method registers the DataFrame as a table in the catalog
 -  **.createOrReplaceTempView()**. This safely creates a new temporary table if nothing was there before, or updates an existing table if one was already defined
 
+![image](https://user-images.githubusercontent.com/47908891/230019422-91e69a77-e4d7-406a-97fd-93f8ac35e9e2.png)
+
+
 ```python
 # Create pd_temp
 pd_temp = pd.DataFrame(np.random.random(10))
