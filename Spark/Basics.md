@@ -39,6 +39,18 @@ print(my_spark)
 ```python
 print(spark.catalog.listTables())
 ```
+## Basics
+- Print the first few lines in the dataframe
+```python
+df.show() 
+```
+### Filter method
+- Spark counterpart of SQL's WHERE clause. The .filter() method takes either an expression that would follow the WHERE clause of a SQL expression as a string, or a Spark Column of boolean (True/False) values.
+
+```python
+flights.filter("air_time > 120").show()
+flights.filter(flights.air_time > 120).show() # boolean values
+```
 
 ## To Pandas
 - Convert pyspark to pandas dataframe
@@ -82,5 +94,85 @@ print(spark.catalog.listTables())
 airports = spark.read.csv(file_path, header=True)
 ```
 
+## Read from Table in catalog.
+- spark.table('flights') creates a DataFrame containing the values of the flights table in the .catalog
+
+```python
+flights = spark.table('flights')
+```
+
+## withColumn() and select()
+### withColumn()
+
+- .withColumn() method takes two arguments, First, a string with the name of your new column, and second the new column itself.
+- Spark DataFrame is immutable columns can't be updated in place.
+- so withColumn() and similar methods return a new dataframe, to overwrite a column we must reassign the returned DataFrame
+
+```python
+flights = flights.withColumn('duration_hrs', flights.air_time/60)
+```
+### select()
+
+- This method takes multiple arguments - one for each column you want to select. These arguments can either be the column name as a string (one for each column) or a column object (using the df.colName syntax). When you pass a column object, you can perform operations like addition or subtraction on the column to change the data contained in it, much like inside .withColumn()
+
+```python
+selected1 = flights.select("tailnum", "origin", "dest")
+temp = flights.select(flights.origin, flights.dest, flights.carrier)
+```
+
+### Difference
+-  The difference between .select() and .withColumn() methods is that .select() returns only the columns you specify, while .withColumn() returns all the columns of the DataFrame in addition to the one you defined
 
 
+## Alias 
+-  rename a column you're selecting
+```python
+flights.select((flights.air_time/60).alias("duration_hrs"))
+```
+
+## selectExpr()
+-  takes SQL expressions as a string
+-  we can rename columns without the alias 
+```python
+flights.selectExpr("air_time/60 as duration_hrs")
+```
+
+## Group by and aggregation
+- Using group by only to aggregate
+```python
+# Find the shortest flight from PDX in terms of distance
+flights.filter(flights.origin == 'PDX').groupBy().min('distance').show()
+
+# Find the longest flight from SEA in terms of air time
+flights.filter(flights.origin=='SEA' ).groupBy().max('air_time').show()
+
+# Average duration of Delta flights
+flights.filter(flights.carrier == "DL").filter(flights.origin == "SEA").groupBy().avg("air_time").show()
+
+# Total hours in the air
+flights.withColumn("duration_hrs", flights.air_time/60).groupBy().sum("duration_hrs").show()
+```
+- Group by
+
+```python
+flights.groupBy("tailnum").count().show()
+flights.groupBy('origin').avg('air_time').show()
+```
+- GroupBy by using functions
+- .agg() method lets you pass an aggregate column expression that uses any of the aggregate functions from the pyspark.sql.functions submodule
+
+```python
+import pyspark.sql.functions as F
+flights.groupBy('month', 'dest').agg(F.stddev('dep_delay')).show()
+```
+
+## withColumnRenamed()
+```python
+airports = airports.withColumnRenamed('faa','dest')
+```
+
+## Join()
+
+```python
+flights.join(airports, on='dest', how='leftouter')
+```
