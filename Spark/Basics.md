@@ -50,6 +50,10 @@ df.show()
 ```python
 flights.filter("air_time > 120").show()
 flights.filter(flights.air_time > 120).show() # boolean values
+
+
+# Remove missing values
+model_data = model_data.filter("arr_delay is not NULL and dep_delay is not NULL and air_time is not NULL and plane_year is not NULL")
 ```
 
 ## To Pandas
@@ -110,6 +114,7 @@ flights = spark.table('flights')
 
 ```python
 flights = flights.withColumn('duration_hrs', flights.air_time/60)
+model_data = model_data.withColumn("plane_age", model_data.year - model_data.plane_year)
 ```
 ### select()
 
@@ -167,6 +172,7 @@ flights.groupBy('month', 'dest').agg(F.stddev('dep_delay')).show()
 ```
 
 ## withColumnRenamed()
+- first arguement the column to be renamed, new name
 ```python
 airports = airports.withColumnRenamed('faa','dest')
 ```
@@ -175,4 +181,18 @@ airports = airports.withColumnRenamed('faa','dest')
 
 ```python
 flights.join(airports, on='dest', how='leftouter')
+```
+## Cast()
+- used to assign proper data types
+
+### Data Types
+- Numberic
+ 1. Integer
+ 2. Double
+-
+- can be used in combination with withColumn()
+- that .cast() works on columns, while .withColumn() works on DataFrames.
+
+```python
+model_data = model_data.withColumn("arr_delay", model_data.arr_delay.cast('integer'))
 ```
