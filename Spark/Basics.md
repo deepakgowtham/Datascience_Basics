@@ -12,9 +12,19 @@ that can be distributed across worker nodes, and executors
 - The master is connected to the rest of the computers in the cluster, which are called worker. 
 - The master sends the workers data and calculations to run, and they send their results back to the master.
 
+## Spark Architecture
+- A Spark Application consists of a Driver Program and a group of Executors on the cluster. The Driver is a process that executes the main program of your Spark application and creates the SparkContext that coordinates the execution of jobs (more on this later). The executors are processes running on the worker nodes of the cluster which are responsible for executing the tasks the driver process has assigned to them.
+![image](https://user-images.githubusercontent.com/47908891/237017661-f8f01353-f3ea-4147-8aee-3d4678952df8.png)
+
+- [Reference article](https://towardsdatascience.com/sparksession-vs-sparkcontext-vs-sqlcontext-vs-hivecontext-741d50c9486a)
+
+The cluster manager (such as Mesos or YARN) is responsible for the allocation of physical resources to Spark Applications.
+
 - Creating the connection is as simple as creating an instance of the `SparkContext` class
 - The class constructor takes a few optional arguments that allow you to specify the attributes of the cluster you're connecting to.
 - An object holding all these attributes can be created with the `SparkConf()`constructor.
+### Difference between spark Context and Spark Session.
+- Every Spark Application needs an entry point that allows it to communicate with data sources and perform certain operations such as reading and writing data. In Spark 1.x, three entry points were introduced: **SparkContext, SQLContext and HiveContext. Since Spark 2.x, a new entry point called SparkSession has been introduced that essentially combined all functionalities available in the three aforementioned contexts.** Note that all contexts are still available even in newest Spark releases, mostly for backward compatibility purposes.
 
 
 ```python
