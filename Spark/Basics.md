@@ -40,11 +40,6 @@ print(sc) # verify that there's a SparkContext in your environment.
 print(sc.version)
 ```
 
-
-- Spark's core data structure is the `Resilient Distributed Dataset (RDD)`. This is a low level object that lets Spark work its magic by splitting data across multiple nodes in the cluster. However, RDDs are hard to work with directly, so the Spark DataFrame abstraction built on top of RDDs.
-- The Spark DataFrame was designed to behave a lot like a SQL table
-- with Spark DataFrames, you first have to create a `SparkSession` object from your `SparkContext`.
-- You can think of the SparkContext as your connection to the cluster and the SparkSession as your interface with that connection.
 - Creating multiple SparkSessions and SparkContexts can cause issues, so it's best practice to use the SparkSession.builder.getOrCreate() method. This returns an existing SparkSession if there's already one in the environment, or creates a new one if necessary!
 
 ```python
@@ -56,6 +51,10 @@ print(my_spark)
 ```python
 print(spark.catalog.listTables())
 ```
+
+- Spark's core data structure is the `Resilient Distributed Dataset (RDD)`. This is a low level object that lets Spark work its magic by splitting data across multiple nodes in the cluster. However, RDDs are hard to work with directly, so the Spark DataFrame abstraction built on top of RDDs.
+- The Spark DataFrame was designed to behave a lot like a SQL table
+
 ## Basics
 - Print the first few lines in the dataframe
 ```python
