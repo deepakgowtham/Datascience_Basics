@@ -14,6 +14,7 @@ that can be distributed across worker nodes, and executors
 
 ## Spark Architecture
 - A Spark Application consists of a Driver Program and a group of Executors on the cluster. The Driver is a process that executes the main program of your Spark application and creates the SparkContext that coordinates the execution of jobs (more on this later). The executors are processes running on the worker nodes of the cluster which are responsible for executing the tasks the driver process has assigned to them.
+
 ![image](https://user-images.githubusercontent.com/47908891/237017661-f8f01353-f3ea-4147-8aee-3d4678952df8.png)
 
 
@@ -25,6 +26,11 @@ The cluster manager (such as Mesos or YARN) is responsible for the allocation of
 - An object holding all these attributes can be created with the `SparkConf()`constructor.
 ### Difference between spark Context and Spark Session.
 - Every Spark Application needs an entry point that allows it to communicate with data sources and perform certain operations such as reading and writing data. In Spark 1.x, three entry points were introduced: **SparkContext, SQLContext and HiveContext. Since Spark 2.x, a new entry point called SparkSession has been introduced that essentially combined all functionalities available in the three aforementioned contexts.** Note that all contexts are still available even in newest Spark releases, mostly for backward compatibility purposes.
+Since Spark 2.x+, tow additions made HiveContext redundant:
+
+a) SparkSession was introduced that also offers Hive support
+
+b) Native window functions were released and essentially replaced the Hive UDAFs with native Spark SQL UDAFs
 
 - [Reference article](https://towardsdatascience.com/sparksession-vs-sparkcontext-vs-sqlcontext-vs-hivecontext-741d50c9486a)
 
