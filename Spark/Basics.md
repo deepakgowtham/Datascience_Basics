@@ -26,11 +26,13 @@ The cluster manager (such as Mesos or YARN) is responsible for the allocation of
 - An object holding all these attributes can be created with the `SparkConf()`constructor.
 ### Difference between spark Context and Spark Session.
 - Every Spark Application needs an entry point that allows it to communicate with data sources and perform certain operations such as reading and writing data. In Spark 1.x, three entry points were introduced: **SparkContext, SQLContext and HiveContext. Since Spark 2.x, a new entry point called SparkSession has been introduced that essentially combined all functionalities available in the three aforementioned contexts.** Note that all contexts are still available even in newest Spark releases, mostly for backward compatibility purposes.
+
+
 Since Spark 2.x+, tow additions made HiveContext redundant:
 
 a) SparkSession was introduced that also offers Hive support
 
-b) Native window functions were released and essentially replaced the Hive UDAFs with native Spark SQL UDAFs
+b) Native window functions were released and essentially replaced the Hive UDAFs with native Spark SQL UDAFs(User-Defined Aggregate Functions)
 
 - [Reference article](https://towardsdatascience.com/sparksession-vs-sparkcontext-vs-sqlcontext-vs-hivecontext-741d50c9486a)
 
