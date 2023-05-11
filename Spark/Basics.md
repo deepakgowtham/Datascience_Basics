@@ -205,9 +205,9 @@ flights.join(airports, on='dest', how='leftouter')
 
 ### Data Types
 - Numberic
- 1. Integer
- 2. Double
--
+  1. Integer
+  2. Double
+
 - can be used in combination with withColumn()
 - that .cast() works on columns, while .withColumn() works on DataFrames.
 
