@@ -213,4 +213,10 @@ flights.join(airports, on='dest', how='leftouter')
 
 ```python
 model_data = model_data.withColumn("arr_delay", model_data.arr_delay.cast('integer'))
+
+#another way
+
+from pyspark.sql.functions import col
+
+newdf =csvdf.withColumn('requests', col('requests').cast('string'))
 ```
