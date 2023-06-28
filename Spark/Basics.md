@@ -87,7 +87,7 @@ pd_counts = flight_counts.toPandas()
 - .createDataFrame() takes a pandas Dataframe and returns a spark Dataframe
 -  **The output of this method is stored locally, not in the SparkSession catalog. This means that you can use all the Spark DataFrame methods on it, but you can't access the data in other contexts.**
 -  a SQL query (using the .sql() method) that references your DataFrame will throw an error. To access the data in this way, you have to save it as a temporary table.
--  **.createTempView()** Spark DataFrame method, which takes as its only argument the name of the temporary table you'd like to register. This method registers the DataFrame as a table in the catalog
+-  **.createTempView()** Spark DataFrame method, which takes as its only argument the name of the temporary table you'd like to register. Creates a local temporary view with this DataFrame.The lifetime of this temporary table is tied to the SparkSession that was used to create this DataFrame
 -  **.createOrReplaceTempView()**. This safely creates a new temporary table if nothing was there before, or updates an existing table if one was already defined
 
 ![image](https://user-images.githubusercontent.com/47908891/230019422-91e69a77-e4d7-406a-97fd-93f8ac35e9e2.png)
