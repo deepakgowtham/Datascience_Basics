@@ -140,6 +140,7 @@ model_data = model_data.withColumn("plane_age", model_data.year - model_data.pla
 
 ```python
 selected1 = flights.select("tailnum", "origin", "dest")
+selected2 =flights.select(["tailnum", "origin", "dest"])
 temp = flights.select(flights.origin, flights.dest, flights.carrier)
 ```
 
