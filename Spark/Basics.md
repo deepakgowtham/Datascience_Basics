@@ -260,3 +260,16 @@ voter_df = voter_df.withColumn('first_and_middle_name', udfFirstAndMiddle(voter_
 # Show the DataFrame
 voter_df.show()
 ```
+
+### Another way to register udf
+```python
+spark.udf.register('udfname', custom_func, StringType())
+
+```
+
+### Disadv of UDF
+- Pyspark internally converts pyspark code to java code
+ 1. catlyst optimizer doesnt understand the custom function.
+ 2. in addition to JVM the udf code also requires python workers in each executor node.
+
+
