@@ -241,6 +241,11 @@ newdf =csvdf.withColumn('requests', col('requests').cast('string'))
 
 
 ## SparkUDF
+- Define a function
+- wrap the function and store it in a variable for later use. We'll use the pyspark.sql.functions.udf() method. It takes two arguments - the name of the method you just defined, and the Spark data type it will return. This can be any of the options in pyspark.sql.types, and can even be a more complex type, including a fully defined schema object. 
+- Specify the datatype of return of the user defined function.
+- store the udf using a name
+
 ```python
 def getFirstAndMiddle(names):
   # Return a space separated string of names
