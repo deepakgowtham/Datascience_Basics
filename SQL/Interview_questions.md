@@ -1,7 +1,7 @@
 
 <img width="443" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/5aeee907-e353-4f89-8644-bb42e927f006">
 
-1. Dimension table containing list of team names create fixtures without repeating.
+8. Dimension table containing list of team names create fixtures without repeating.
 
 answers
 ```sql
