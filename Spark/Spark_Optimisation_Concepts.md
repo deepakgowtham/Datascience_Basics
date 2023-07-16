@@ -96,8 +96,11 @@ df.explain()
 ## Limit shuffling
 - limit use of .repartition() and use .coalesce()
 ## Broadcast
+
 - when use join() use broadcast()
+
   <img width="401" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/6d6bd307-7f17-477f-99ad-fca5361df99d">
+  
 - When we have one larger dataframe and one smaller dataframe to join, Broadcast the smaller DataFrame. The larger the DataFrame, the more time required to transfer to the worker nodes.
 - broadcast will make operation slower for very small data frames. On small DataFrames, it may be better skip broadcasting and let Spark figure out any optimization on its own.
 - If you look at the query execution plan, a **broadcastHashJoin** indicates you've successfully configured broadcasting.
