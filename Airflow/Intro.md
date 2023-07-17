@@ -23,3 +23,36 @@
 - Conceptual representation of series of activities or collection of tasks to run with their dependecies and relationships.
 - No loops possible(Acyclic)
 - Defined in python and placed in airflow DAG folder
+- Directed Acyclic Graph, has the following attributes:
+  1. It is Directed, meaning there is an inherent flow representing the dependencies or order between execution of components. These dependencies (even implicit ones) provide context to the tools on how to order the running of components.
+  2.  A DAG is also Acyclic - it does not loop or repeat. This does not imply that the entire DAG cannot be rerun, only that the individual components are executed once per run
+
+ Airflow DAG's
+ - written in python, can also include other languages like shell script
+ - contains tasks may contain operator, sensor
+ - contains dependency explicitly or implicitly
+```python
+from airflow.models import DAG
+from datetime import datetime
+
+default_argument ={     
+ 'owner' :'deep',
+  'email': 'abc@abc.com',
+ 'start_date' : datetime(2023, 7,17) # earliest datetime the dag can be run
+ 'retries' : 2
+ }
+
+etl_dag =DAG('etl_workflow', default_args=default_arguments)
+# etl_dag == variable name to change any parameters
+# etl_workflow == name of the dag or dagid
+```
+
+# Run a task from Shell
+
+```
+airflow run <dag_id> <task_id> <start_date>
+
+airflow list_dags #gives list of all defined dags
+# start airflow werbserver in port 
+airflow webserver -p 9090
+```
