@@ -25,3 +25,26 @@ t1 =BashOperator (
 
 <img width="543" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/67bad902-d7ce-49d1-b6e7-c53c00a47c3c">
 
+# Branching
+- Branching provides the ability for conditional logic within Airflow. Basically, this means that tasks can be selectively executed or skipped depending on the result of an Operator.
+- one example BranchPythonOperator uses python_callable function to return the next task id or list of ids.
+
+```python
+from airflow.operators.python_operator import BranchPythonOperator
+
+def branch_test(**kwargs):
+   if int(kwargs['ds_nodash']) %2 ==0:
+       return 'even_day_task'
+   else
+      retrun 'odd_day_task'
+
+branch_task = BranchPythonOperator (
+   task_id ='branch_task',
+   dag=dag,
+   provide_context=True, # True here tells airflow to provide access to runtime variables adn macros
+   python_callable =branch_test
+)
+start_task >> branch_task >> even_day_task >> even_day_task2
+branch_task >>odd_day_task >> odd_day_task2
+```
+<img width="511" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/82b3c5f8-4869-441c-9c54-36e84a852e17">
