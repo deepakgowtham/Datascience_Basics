@@ -56,3 +56,18 @@ airflow list_dags #gives list of all defined dags
 # start airflow werbserver in port 
 airflow webserver -p 9090
 ```
+
+# Scheduler
+- to start a scheduler.
+```python
+airflow scheduler
+```
+
+# Basic Troubleshooting.
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/9db24512-a04c-4f43-802d-40bb9d0f040f)
+
+
+<img width="456" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/0419631e-f087-461b-9976-0f182c39d7b1">
+
+
+
