@@ -47,7 +47,7 @@ etl_dag =DAG('etl_workflow', default_args=default_arguments)
 # etl_workflow == name of the dag or dagid
 ```
 
-# Run a task from Shell
+# Run from Shell
 
 ```
 airflow run <dag_id> <task_id> <start_date>
@@ -56,6 +56,8 @@ airflow list_dags #gives list of all defined dags
 # start airflow werbserver in port 
 airflow webserver -p 9090
 ```
+
+<img width="294" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/1c4f57e2-90de-43bf-9a97-769b2760d74b">
 
 # Scheduler
 - to start a scheduler.
