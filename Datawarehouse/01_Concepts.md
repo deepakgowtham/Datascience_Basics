@@ -26,6 +26,8 @@
 
 ## Data Virtualization
 - Read only Distributed DBMS
+- Data virtualization reaches directly into the source applications and accesses data at the time it's needed for reporting and analytics, rather than pre-staging.
+- does NOT make copies of original data for usage in analytics
 - In-place data access
 - other names virtual data warehousing, enterprise information integration, enterpirse data access.
 - use full for simple transformation, smaller number of data sources, relaxed response time.
@@ -34,7 +36,8 @@
 
  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a9c8316c-5148-414a-b784-0aff8078440b">
 
- Data Mart = subset of data from warehouse for specific use cases.
+ Data Mart = subset of data from warehouse for specific use cases, specific subsets of the overall analytical data that they need
+ 
 
  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/61d540d7-ecaf-43b1-b35d-9136ba9d2b9b">
 
