@@ -34,7 +34,8 @@
 
 # Components
 
- <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a9c8316c-5148-414a-b784-0aff8078440b">
+ <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c48c62a8-c9d8-4ae8-a7ff-4c4862e2444e">
+
 
  Data Mart = subset of data from warehouse for specific use cases, specific subsets of the overall analytical data that they need
  
