@@ -34,7 +34,9 @@
 <img width="936" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a82feacf-05ee-43c3-a4ec-0fb7645c866a">
 
 EDW - Enterprise Datawarehouse
+
 DW Bus - Dataware house Dimensional bus
+
 Confirmed Dimension -> Direct view about key subject areas present in different data marts.
 
 <img width="586" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a6498446-4832-4bac-be00-0a0c012a36fc">
