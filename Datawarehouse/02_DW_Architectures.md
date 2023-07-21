@@ -23,7 +23,7 @@
 
 ## Disadv
 - often inconsistent data
-- difficutl to cross integrate
+- difficult to cross integrate
 
 <img width="776" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/9993fc2b-2314-491d-99d2-8517824d2ffc">
 
