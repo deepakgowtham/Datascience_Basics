@@ -59,5 +59,50 @@ Federated EDW --> Multiple Data Marts, in different formats answering questions 
 
 ## Can we implemented in two styles.
 
+1. ODS parallel to Data warehouse.
+
+<img width="571" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/5d8f3a90-07f8-4f4b-ad1d-621f5c83e5d3">
+
+2. ODS as staging area for Data warehouse
+
+<img width="582" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/fb85402c-efc7-47c7-8cfb-c25ffd7fe60f">
+
+ODS not popular today
+- Replaced by faster DWs
+- Superseded by big data velocity
+- ODS as a component in Data Lake
+
+# Staging layer and User Access layer.
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/cbad0559-9d20-4323-ba64-5c5c9b8efa00">
+
+## Staging Layer.
+
+- Landing zone.
+- Copy the data from source without giving load to the source system.
+- mirror image of the data from source system.
+- Focus on E of ETL
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/cb45bbea-cced-4434-8994-989b1005f6b1">
+### Types of staging Layer.
+- Non Persistant staging Layer
+   1. During the refresh cycle, the staging layer is empty 
+   2. data is transformed and additonal data that is not present placed in User access layer is placed in user access layer.
+   3. then again the staging layer is emptied. Hence, Non persistant staging layer. User access and staging are not in sync.
+   
+   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/31e93b62-633b-4528-b108-169d07d43a3b">
+
+
+- Persistant staging Layer
+   1. Data is present in staging layer as it is in User access layer.
+   2. Additional data is placed in user access layer.
+   3. Data is not emptied.
+      
+   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/fb571688-ead2-43f3-9460-0ec8b9cab8d1">
+
+
+## User Access layer
+- the layer where users access the data.
+- Dimensional data is stored here.
 
 
