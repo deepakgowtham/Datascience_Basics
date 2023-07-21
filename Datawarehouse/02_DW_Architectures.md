@@ -28,6 +28,7 @@
 <img width="776" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/9993fc2b-2314-491d-99d2-8517824d2ffc">
 
 <img width="770" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a1be7859-376b-4650-8e0b-b3f6b07c99b7">
+
 - only difference is the number of data sources, datamart has small number of sources when compared to data warehouse. 
 
 <img width="936" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a82feacf-05ee-43c3-a4ec-0fb7645c866a">
