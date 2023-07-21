@@ -6,11 +6,11 @@
 - **Non-volatile** - remains stable in between refreshes.
 - Should support data driven decision making.
 
-  # Reasons to build Data warehouse
+# Reasons to build Data warehouse
   - to support data driven decision making - containg past, present and future of the data to support decision making.
   - **one stop shop** for all the data we need.
  
-  # Data warehouse vs Data Lake vs Data Virtualization
+# Data warehouse vs Data Lake vs Data Virtualization
   ## Data ware house.
   - built on top of dbms like oracle, db2  or multi dimensional db type called cube.
  
