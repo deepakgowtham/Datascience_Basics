@@ -12,7 +12,7 @@
  
 # Data warehouse vs Data Lake vs Data Virtualization
   ## Data ware house.
-  - built on top of dbms like oracle, db2  or multi dimensional db type called cube.
+  - built on top of dbms like oracle, db2  or multi dimensional db called cube.
  
   ## Data Lake.
   - built on a big data environment like hdfs
