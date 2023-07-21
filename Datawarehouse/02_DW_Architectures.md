@@ -49,3 +49,15 @@ Federated EDW --> Multiple Data Marts, in different formats answering questions 
 - Fast query response time.
 - Less flexible than RDBMS
 - Can be used for Data Marts in some cases.
+
+# Operational Data store
+- Similar to Data warehouse contains data from multiple sources
+- but main difference is it focuses on the **current operational data and not history data.**
+- Tell me whats happening right now.
+- Eg. when a transaction occurs in POS system, the data is sent immediately to the ODS, instead of waiting for the next data warehouse refresh.
+- Used for making strategic or Operation data driven analytics or decision making.
+
+## Can we implemented in two styles.
+
+
+
