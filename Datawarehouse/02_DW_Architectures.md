@@ -55,7 +55,7 @@ Federated EDW --> Multiple Data Marts, in different formats answering questions 
 - but main difference is it focuses on the **current operational data and not history data.**
 - Tell me whats happening right now.
 - Eg. when a transaction occurs in POS system, the data is sent immediately to the ODS, instead of waiting for the next data warehouse refresh.
-- Used for making strategic or Operation data driven analytics or decision making.
+- Used for making  Operational or real time data driven analytics or decision making.
 
 ## Can we implemented in two styles.
 
