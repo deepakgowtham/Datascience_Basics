@@ -1,4 +1,5 @@
-<img width="456" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/db910de8-d8a7-4126-90d7-b021fae5c55c"># ETL
+# ETL
+
 ## Extract
 - Extract the data from source.
 - With all errors and place in staging layer
@@ -14,7 +15,7 @@
 # ELT
   - Blast the data into big data.
   - Data in RAW form in Hadoop HDFS, AWS S3 etc.
-  - Use the computing power in big data enviornemnt to transform as needed.
+  - Use the computing power in big data enviornment to transform as needed.
   
  # Schema on read vs schema on write
 
@@ -104,9 +105,11 @@ we can do the schema and analysis when required as we transform the data.
 <img width="456" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/710eb07c-f420-46e1-b007-e39fff56402f">
 
 Depending on the data we can change increment strategy.
+
 <img width="446" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/52c45a3a-0d47-4960-a47e-687d0dcd0f85">
 
 The variation in feed can also be at table level at multiple source
+
 <img width="461" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/3225bf96-18cd-466a-9a59-5ea8b0ec02bf">
 
 <img width="458" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/5da12021-71cd-4e87-82f4-0ecaee434633">
