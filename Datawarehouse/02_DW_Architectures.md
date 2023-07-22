@@ -57,7 +57,7 @@ Federated EDW --> Multiple Data Marts, in different formats answering questions 
 - Eg. when a transaction occurs in POS system, the data is sent immediately to the ODS, instead of waiting for the next data warehouse refresh.
 - Used for making  Operational or real time data driven analytics or decision making.
 
-## Can we implemented in two styles.
+## Can be implemented in two styles.
 
 1. ODS parallel to Data warehouse.
 
