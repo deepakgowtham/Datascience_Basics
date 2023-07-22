@@ -70,7 +70,7 @@ Federated EDW --> Multiple Data Marts, in different formats answering questions 
 ODS not popular today
 - Replaced by faster DWs
 - Superseded by big data velocity
-- ODS as a component in Data Lake
+- ODS used some time as a component in Data Lake
 
 # Staging layer and User Access layer.
 
@@ -84,11 +84,14 @@ ODS not popular today
 - Focus on E of ETL
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/cb45bbea-cced-4434-8994-989b1005f6b1">
+
 ### Types of staging Layer.
+
 - Non Persistant staging Layer
-   1. During the refresh cycle, the staging layer is empty 
-   2. data is transformed and additonal data that is not present placed in User access layer is placed in user access layer.
-   3. then again the staging layer is emptied. Hence, Non persistant staging layer. User access and staging are not in sync.
+   1. During the refresh cycle, the staging layer is empty
+   2. The data is loaded into the staging layer
+   3. Then, data is transformed and additonal data that is not present placed in User access layer is placed in user access layer.
+   4. Then again the staging layer is emptied. Hence, Non persistant staging layer. User access and staging are not in sync.
    
    <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/31e93b62-633b-4528-b108-169d07d43a3b">
 
