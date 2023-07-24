@@ -16,12 +16,12 @@
   2. Independent -> small dataware house like system drawing input directly from multiple source systems
 
 
-## Adv
+## Adv of Independent Data Mart
 - Cross technology
 - Decomposistion - isolating some portions from other so they can have easy changes.
 - overcomes org. challanges.
 
-## Disadv
+## Disadv of Independent data Mart.
 - often inconsistent data
 - difficult to cross integrate
 
