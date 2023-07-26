@@ -54,21 +54,25 @@ Dimensional Context most often answer question by ? and for?
 <img width="464" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/2d3b3b54-4353-4ced-91f1-d9978346fd8a">
 
 **Both start and snowflake has same data but represented in different forms.**
+
 <img width="461" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/2a0196eb-fe99-45ba-a30d-799abd52c197">
+<br>
 <img width="464" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/488f56a4-0f3f-432d-b2b5-327fd3be1521">
 
 # Forms of Additivity
  A datawarehouse fact can be
  1. Additive  Fact == can be added under all circumstances eg. Salary. here we can add veritically salary of all employees
   <img width="288" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a47b0a2d-45d3-4b7f-88c4-eefef2854b1e">
+  
     also horizontally salary of same persion across time
+    
   <img width="467" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/186c1381-f4a1-4acf-9f5b-fe0bc4f24f6e">
 
-  2. Non- Additive - example GPA we cant add GPA of all the students in class, ratios, calculated Average.
+  3. Non- Additive - example GPA we cant add GPA of all the students in class, ratios, calculated Average.
      - For a Non additive fact store the underlying component (eg. marks) in fact tables.
      - we can also store the non- additive fact as an additional row for easy access.
       
-  3. Semi- Additive
+  4. Semi- Additive
      - we can add them sometimes but cannot add them other times.
 
 
