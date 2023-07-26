@@ -24,9 +24,10 @@ Dimensional Context most often answer question by ? and for?
 <img width="422" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/98e787de-c709-4e63-99ab-4e9fe383982a">
 
 **If we organize data by measurements, filtered and grouped by context it will help us to make data driven decisions.**
-OLAP is key part of BI, OLAP means dimensional analysis.
-Dimensional analysis is done using dimensional data.
-Dimensional data means = facts, dimensions, fact tables and dimension tables.
+
+- OLAP is key part of BI, OLAP means dimensional analysis.
+- Dimensional analysis is done using dimensional data.
+- Dimensional data means = facts, dimensions, fact tables and dimension tables.
 # Facts
 - Measurements = Facts
 - **Numeric** and quantifiable
