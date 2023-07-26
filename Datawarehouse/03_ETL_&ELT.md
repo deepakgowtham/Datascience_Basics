@@ -8,7 +8,7 @@
 - Modify the data
 ## Load
 - store in user access layer.
-## Challanges
+## Challanges in ETL mode
 - significant  business analysis before storing data.
 - Significant data modeling before storing the data.
 
