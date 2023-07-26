@@ -20,7 +20,8 @@
   - **Velocity** of data intake is much faster
   - **Variety** - along with structred data data lake also supports semi structred data like emails, text messages, and unstructed data like audio and video.
   - **3 V's of data lake**
-  both supports SQL
+  
+  <br>both supports SQL
 
 <img width="470" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/0b21f918-811d-4658-809c-e9252778153f">
 
