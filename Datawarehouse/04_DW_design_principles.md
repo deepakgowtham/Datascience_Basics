@@ -111,7 +111,7 @@ Dimensional Context most often answer question by ? and for?
 
 <img width="466" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/868e1530-9f35-493d-a8d5-3d8667d19296">
 
-![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/3bd396f0-4289-40bc-ae98-75c394382259)
+<img width="495" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/7ace79f9-7547-4f77-9c20-25a0a3921007">
 
 # PTR
 - Data in user access layer should be structured dimensionaly (Fact table and dimension table)
@@ -120,19 +120,23 @@ Dimensional Context most often answer question by ? and for?
 # Faculty dimension  table 
 ## In Star schema
 
-![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/46eb9688-f07a-4e2c-8f43-6fa82f8da06e)
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/88527114-ac54-4ee2-95f4-22b690848c4e">
+
 
 Here though there are 3 natural keys Faculty_id, Dept_id, college_id we are using the faculty_key which is a surrogate key for the dimension table.
 
 ## In snowflake schema.
-  ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c87b31d3-bffb-421f-bae7-36f830be5f10)
   
+  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/91ca49fc-9b53-4031-9502-2db78569c7b3">
+
 - Each table has its own primary key (surogate key) though there is natural key present.
 - We will also have foreign key connecting to higher level
 - the college_Dim will not have foreign key because there is no higher level
 - the dimension table is arranged in a hierarchy starting from lower level to higher
 
-![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f5f239a0-a00b-427d-8bc3-98c10d23cb71)
+
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d5907514-d817-44a9-bc35-d396cc4b9ce1">
 
 ## Example 2
 
