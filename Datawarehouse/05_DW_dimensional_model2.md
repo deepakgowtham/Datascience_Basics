@@ -24,3 +24,22 @@
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a518860d-9170-4d88-b011-56d57acea70f">
 
+## Rules for storing facts together
+- Both the facts are available with same grain(level of detail)
+    1. to check this rule to identify the dimension available for them
+      <img width="464" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/814ad2f4-113e-4ad5-9f97-a745543d1ab2">
+      here both have the same dimension so rule 1 applies
+
+- Facts occur simultaneously
+   2. Both the does not occur simultaneously. billing and payment need not occur simultaneously.
+
+  ## Problem if we violate the 2 rules.
+   - Complicates data analysis - part of different process
+   - requires sql workaround
+   - Billing and payments are two different business process.
+   - each business process belong to a seperate fact table.
+ 
+   - In this scenario  we can store facts seperately connected by the dimensions
+     <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f71978c7-491e-41bc-963e-d1947c6d59f8">
+
+   
