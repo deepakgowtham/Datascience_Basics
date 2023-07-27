@@ -39,6 +39,16 @@ Dimensional Context most often answer question by ? and for?
 - context for a fact = dimension
   
 <img width="444" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/02de5faf-9266-4227-8f0d-fbb18c65fcd8">
+# Dimension tables
+ - Provide key data warehousing subject areas.
+ - subject areas that provide context to measurements.
+ - all or most meaningful information.
+ - one-stop shop for the dimensional subject.
+
+## Hierachical vs flat dimension.
+- Dimension having a hierarchy
+- here faculty dimension has a defined hierarchy where as student table doesnt fit in any of this hierarchy
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/14ebe23e-9569-437f-bcaf-5640f8f8b37e)
 
 # Star vs Snowflake
 - We represent fact and dimensions in either Start schema or snowflake schema
@@ -101,7 +111,37 @@ Dimensional Context most often answer question by ? and for?
 
 <img width="466" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/868e1530-9f35-493d-a8d5-3d8667d19296">
 
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/3bd396f0-4289-40bc-ae98-75c394382259)
+
 # PTR
 - Data in user access layer should be structured dimensionaly (Fact table and dimension table)
 - Fact and dimension tables provide the foundation for the user access layer, and supply the dimensionality
-    
+
+# Faculty dimension  table 
+## In Star schema
+
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/46eb9688-f07a-4e2c-8f43-6fa82f8da06e)
+
+Here though there are 3 natural keys Faculty_id, Dept_id, college_id we are using the faculty_key which is a surrogate key for the dimension table.
+
+## In snowflake schema.
+  ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c87b31d3-bffb-421f-bae7-36f830be5f10)
+  
+- Each table has its own primary key (surogate key) though there is natural key present.
+- We will also have foreign key connecting to higher level
+- the college_Dim will not have foreign key because there is no higher level
+- the dimension table is arranged in a hierarchy starting from lower level to higher
+
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f5f239a0-a00b-427d-8bc3-98c10d23cb71)
+
+## Example 2
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d08d1f54-3150-4de3-9f1f-4189c62791ba">
+
+- Fact table with split dimension here month can be part of Fiscal calender or Academic calender.
+- When branching is involved at the branching table we will have foreign key of both the tables in the higher dimension.
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/98aa5a47-24ce-409f-b9d2-e033c0edd6eb">
+
+  
+  
