@@ -61,7 +61,7 @@ here both have the same dimension so rule 1 applies
  - The primary key for the fact table should be the **combination of all foreign keys relating back to dimension table**.
  - Even if there is a natural key is fact table we have to ignore it.
  - Here two surrogete keys that combine to form the fact table's primary key.
- - Also they server as foreign keys as well.
+ - Also they serve as foreign keys as well.
    
   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f90c3c69-3e11-4e11-9f47-4551c5e9deb7">
 
@@ -82,16 +82,18 @@ here both have the same dimension so rule 1 applies
   ## Case 1:
   
   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/037ef5eb-3d05-41c4-856f-92aab39af644">
+  <br>
   
-  - In this case if we want to track and analyze end of week meal account balances throughout the semester.
-  - doing this using a transaction grained fact table is possible but the sql required will be difficult, so we will use a Periodic snapshot fact table
+- In this case if we want to track and analyze end of week meal account balances throughout the semester.
+- doing this using a transaction grained fact table is possible but the sql required will be difficult, so we will use a Periodic snapshot fact table
 
   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/39a61604-f81e-41f2-a796-19b00f91826a">
-  - here the campus_food dimension is not requried to answer our question
+  <br>
+- here the campus_food dimension is not requried to answer our question
    
   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/6dbd8346-6cc0-42b9-8ba3-7bcd07bebb61">
-  
-  - easier and more direct access for certain type of business questions.
+  <br>
+- easier and more direct access for certain type of business questions.
 
 ## Second type of Periodic snapshot Fact table.
 - here the fact table contains level of water in reservoir (pond)
@@ -109,9 +111,12 @@ here both have the same dimension so rule 1 applies
 -  What was the ending meal card balance for sally jackson on any given week?
 
   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ae72b679-d332-403e-bebd-2e0fc9acceb2">
-  - we can't add the meal card balance every week as it makes no meaning.
-  - but we can perform other numeric operation along time dimension like average balance per week  
-  - also we can lock the table by time dimension can perform numeric operation like total balance for all students in a particular week.
+  <br>
+  
+- we can't add the meal card balance every week as it makes no meaning.
+- but we can perform other numeric operation along time dimension like average balance per week  
+- also we can lock the table by time dimension can perform numeric operation like total balance for all students in a particular week.
+  
 
    
 
@@ -132,7 +137,7 @@ here both have the same dimension so rule 1 applies
 - college employee responsible for each phase.
 
 <img width="483" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/e201cbf4-39fd-4029-a0eb-d26c66abe736">
--Student_key is copied directly, but date_key is copied to different names to tract the progress.here date becomes differentiated into mulitple phases depending on the stage of application.
+- Student_key is copied directly, but date_key is copied to different names to tract the progress.here date becomes differentiated into mulitple phases depending on the stage of application.
 - same with employee.
 
 <img width="477" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/2e9c0da1-6819-473e-96b8-be314305c125">
@@ -140,18 +145,22 @@ here both have the same dimension so rule 1 applies
 - Richard thompson applies for $8000 aid on 11-Aug-2020
 
 <img width="467" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/5078da0d-9370-44ab-8e27-703f80aa4405">
- day 2 application is still in same stage, only the day_screening is changed.
+<br>
+day 2 application is still in same stage, only the day_screening is changed.
 
- <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/173901e6-4546-4865-a9d9-83c5ed5c1407">
- day 3 screening is completed and days_screening will now not increase 
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/173901e6-4546-4865-a9d9-83c5ed5c1407">
+<br>
+day 3 screening is completed and days_screening will now not increase 
 
- <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/4ebcb451-ba28-426a-af88-3a6d6d4e2931">
- day 4 assigned to prelimnary examination ot an employee and days_prelim_decision started changing.
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/4ebcb451-ba28-426a-af88-3a6d6d4e2931">
+<br>
+day 4 assigned to prelimnary examination ot an employee and days_prelim_decision started changing.
  
- <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ec2801cb-92ee-4e2d-82f0-5ea0f8150f9f">
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ec2801cb-92ee-4e2d-82f0-5ea0f8150f9f">
  once approved
 
  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/04571e2e-85c6-4b55-83d2-83f65d8a3a35">
+ 
 we can get the days spent for each stage and also we can get the employee responsible for each stage.
 
 can also track other facts.
@@ -159,6 +168,7 @@ can also track other facts.
  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/9316e08e-f076-425e-a15f-b785e8333014">
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/42f6e609-4e1b-4271-a2c8-a426b90cc937">
+<br>
 From the addtional facts we can calculate aid applied and granted difference, total amount in screening, total amount paid etc.
 
 # Factless fact table.
@@ -173,6 +183,7 @@ From the addtional facts we can calculate aid applied and granted difference, to
   - presence of the row in the fact table is the measurement.
   - can count rows with or without filters.
   - factless fact table = pk/fk columns only
+  
 ## Multiple factless fact tables.
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/b7ba27c2-1f51-4a2a-83ab-785943148953">
@@ -180,6 +191,7 @@ From the addtional facts we can calculate aid applied and granted difference, to
 can comibine transaction grained and factless fact table
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/4ad52466-b93d-4c43-8b5f-c4568fb48f89">
+
 ## Sometimes use a tracking fact.
 - value always set =1
 - allow to use sql sum() rather than count
@@ -191,14 +203,15 @@ can comibine transaction grained and factless fact table
 - recording a particular relationship or association amoung mulitple parties.
 - even if no transactions actually occur.
 - typically between a starting and ending date or time.
+- 
 ## Case : academic advisers assigned to students.
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/65b4c77d-fcdc-4474-898e-fa7f067bb2ed">
-
+<br>
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/719a1822-216c-476b-b8a8-2ac443bb1cc8">
-
+<br>
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f6d637a8-ba5a-450d-abe3-d84bf409c4d6">
-
+<br>
 
 # Fact tables in star and snowflake schema
 ## Star
@@ -208,22 +221,22 @@ can comibine transaction grained and factless fact table
 - In snowflake schema the primary keys from all the dimension table should not present.
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/951b76e9-6e16-4974-aef6-115aa625db84">
-
+<br>
 - only store lowest level PK-FK relationship in fact table
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/b6069afe-cffb-45e5-992c-ef227e34a296">
-
+<br>
 
 # sql for dimension and fact tables.
 
 <img width="436" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/8a93972a-e45b-48e0-a63f-e70d0ede1bb2">
-
+<br>
 <img width="473" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c3121e62-f49f-4182-b773-fc39e6b6bddc">
-
+<br>
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/06d66af4-58f1-42f0-8abb-612f1e416a49">
-
+<br>
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/1a5fb2fc-bd2d-4e1a-ae7d-16901459002e">
-
+<br>
 <img width="923" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/1b350779-0824-44f9-a713-8a77b17a1845">
 
 
