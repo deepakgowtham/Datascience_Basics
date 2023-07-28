@@ -28,7 +28,9 @@
 - Both the facts are available with same grain(level of detail)
     1. to check this rule to identify the dimension available for them
 
+
 <img width="464" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/814ad2f4-113e-4ad5-9f97-a745543d1ab2">
+
   
       
 here both have the same dimension so rule 1 applies
@@ -48,7 +50,9 @@ here both have the same dimension so rule 1 applies
  ## What facts can be stored together
  - Tution billed amount and Activities Fees billed amount
  - This example pass rule number 1
+   
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/eb741b19-ba31-41d5-bc89-78fe9ebbbf9f">
+
 - Also passes rule number 2, as both can occur simulteaneously.
 
   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d5b8c650-b553-43f4-8346-dc01569f55d3">
@@ -76,15 +80,18 @@ here both have the same dimension so rule 1 applies
    1. Aggregated result of regular transactions, where the transactions are stored in Transaction Grained fact tables.
    2.  Levels that are not related to the regular transactions.(for data that is not stored in transaction grained fact tables)
   ## Case 1:
-   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/037ef5eb-3d05-41c4-856f-92aab39af644">
-   - In this case if we want to track and analyze end of week meal account balances throughout the semester.
-   - doing this using a transaction grained fact table is possible but the sql required will be difficult, so we will use a Periodic snapshot fact table
+  
+  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/037ef5eb-3d05-41c4-856f-92aab39af644">
+  
+  - In this case if we want to track and analyze end of week meal account balances throughout the semester.
+  - doing this using a transaction grained fact table is possible but the sql required will be difficult, so we will use a Periodic snapshot fact table
 
-   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/39a61604-f81e-41f2-a796-19b00f91826a">
-   - here the campus_food dimension is not requried to answer our question
+  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/39a61604-f81e-41f2-a796-19b00f91826a">
+  - here the campus_food dimension is not requried to answer our question
    
-   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/6dbd8346-6cc0-42b9-8ba3-7bcd07bebb61">
-   - easier and more direct access for certain type of business questions.
+  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/6dbd8346-6cc0-42b9-8ba3-7bcd07bebb61">
+  
+  - easier and more direct access for certain type of business questions.
 
 ## Second type of Periodic snapshot Fact table.
 - here the fact table contains level of water in reservoir (pond)
@@ -114,8 +121,11 @@ here both have the same dimension so rule 1 applies
  - Include both completed and in progress phases.
  - can also tract other measures in addition to elapsed time as process proceeds
  - Introduces multiple relationships from fact table back to single dimension.
+   
 ## case:
+
 <img width="461" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/2659d1f8-87ad-431a-a79d-4b877941c11f">
+
 ## Dimensions in this case
 - student
 - Time
@@ -157,6 +167,7 @@ From the addtional facts we can calculate aid applied and granted difference, to
 - students registering for a webinar. we can track who registers, which webinar, the date of registration, scheduled date for each year.
 
   <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/6d58e4c9-c6c3-498b-b919-c192a656f1b1">
+  
   - here there is no facts in fact table only keys from other table
   - measurement is actually the occurence of the event.
   - presence of the row in the fact table is the measurement.
@@ -186,10 +197,34 @@ can comibine transaction grained and factless fact table
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/719a1822-216c-476b-b8a8-2ac443bb1cc8">
 
-
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f6d637a8-ba5a-450d-abe3-d84bf409c4d6">
 
 
+# Fact tables in star and snowflake schema
+## Star
+<img width="588" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/e48905d8-a523-4855-961d-4d57204e0770">
+
+## Snowflake
+- In snowflake schema the primary keys from all the dimension table should not present.
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/951b76e9-6e16-4974-aef6-115aa625db84">
+
+- only store lowest level PK-FK relationship in fact table
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/b6069afe-cffb-45e5-992c-ef227e34a296">
+
+
+# sql for dimension and fact tables.
+
+<img width="436" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/8a93972a-e45b-48e0-a63f-e70d0ede1bb2">
+
+<img width="473" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c3121e62-f49f-4182-b773-fc39e6b6bddc">
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/06d66af4-58f1-42f0-8abb-612f1e416a49">
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/1a5fb2fc-bd2d-4e1a-ae7d-16901459002e">
+
+<img width="923" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/1b350779-0824-44f9-a713-8a77b17a1845">
 
 
 
