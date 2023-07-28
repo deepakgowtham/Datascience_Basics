@@ -108,4 +108,50 @@ here both have the same dimension so rule 1 applies
 
    
 
+ # 3. Accumulating snapshot fact table.
+ - Tracking progress of a business process
+ - Elapsed time spent in each stage or phase for a business process
+ - Include both completed and in progress phases.
+ - can also tract other measures in addition to elapsed time as process proceeds
+ - Introduces multiple relationships from fact table back to single dimension.
+## case:
+<img width="461" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/2659d1f8-87ad-431a-a79d-4b877941c11f">
+## Dimensions in this case
+- student
+- Time
+- college employee responsible for each phase.
+
+<img width="483" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/e201cbf4-39fd-4029-a0eb-d26c66abe736">
+-Student_key is copied directly, but date_key is copied to different names to tract the progress.here date becomes differentiated into mulitple phases depending on the stage of application.
+- same with employee.
+
+<img width="477" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/2e9c0da1-6819-473e-96b8-be314305c125">
+
+- Richard thompson applies for $8000 aid on 11-Aug-2020
+
+<img width="467" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/5078da0d-9370-44ab-8e27-703f80aa4405">
+ day 2 application is still in same stage, only the day_screening is changed.
+
+ <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/173901e6-4546-4865-a9d9-83c5ed5c1407">
+ day 3 screening is completed and days_screening will now not increase 
+
+ <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/4ebcb451-ba28-426a-af88-3a6d6d4e2931">
+ day 4 assigned to prelimnary examination ot an employee and days_prelim_decision started changing.
  
+ <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ec2801cb-92ee-4e2d-82f0-5ea0f8150f9f">
+ once approved
+
+ <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/04571e2e-85c6-4b55-83d2-83f65d8a3a35">
+we can get the days spent for each stage and also we can get the employee responsible for each stage.
+
+can also track other facts.
+
+ <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/9316e08e-f076-425e-a15f-b785e8333014">
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/42f6e609-4e1b-4271-a2c8-a426b90cc937">
+From the addtional facts we can calculate aid applied and granted difference, total amount in screening, total amount paid etc.
+
+# Factless fact table.
+
+
+
