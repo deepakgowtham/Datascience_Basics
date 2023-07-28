@@ -152,6 +152,44 @@ can also track other facts.
 From the addtional facts we can calculate aid applied and granted difference, total amount in screening, total amount paid etc.
 
 # Factless fact table.
+- an event that occurs we want to track
+- but there is nothing significant to measure about the event.
+- students registering for a webinar. we can track who registers, which webinar, the date of registration, scheduled date for each year.
+
+  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/6d58e4c9-c6c3-498b-b919-c192a656f1b1">
+  - here there is no facts in fact table only keys from other table
+  - measurement is actually the occurence of the event.
+  - presence of the row in the fact table is the measurement.
+  - can count rows with or without filters.
+  - factless fact table = pk/fk columns only
+## Multiple factless fact tables.
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/b7ba27c2-1f51-4a2a-83ab-785943148953">
+
+can comibine transaction grained and factless fact table
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/4ad52466-b93d-4c43-8b5f-c4568fb48f89">
+## Sometimes use a tracking fact.
+- value always set =1
+- allow to use sql sum() rather than count
+- more readable but less efficient in execution.
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ffa1a738-6f5e-4d90-bebb-9c93014e99f5">
+
+## Second type of factless fact table.
+- recording a particular relationship or association amoung mulitple parties.
+- even if no transactions actually occur.
+- typically between a starting and ending date or time.
+## Case : academic advisers assigned to students.
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/65b4c77d-fcdc-4474-898e-fa7f067bb2ed">
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/719a1822-216c-476b-b8a8-2ac443bb1cc8">
+
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f6d637a8-ba5a-450d-abe3-d84bf409c4d6">
+
+
 
 
 
