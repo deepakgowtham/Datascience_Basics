@@ -39,6 +39,7 @@ Dimensional Context most often answer question by ? and for?
 - context for a fact = dimension
   
 <img width="444" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/02de5faf-9266-4227-8f0d-fbb18c65fcd8">
+
 # Dimension tables
  - Provide key data warehousing subject areas.
  - subject areas that provide context to measurements.
@@ -51,8 +52,8 @@ Dimensional Context most often answer question by ? and for?
 ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/14ebe23e-9569-437f-bcaf-5640f8f8b37e)
 
 # Star vs Snowflake
-- We represent fact and dimensions in either Start schema or snowflake schema
-## star Schema
+- We represent fact and dimensions in either Star schema or snowflake schema
+## Star Schema
 - In star schema we put all the 3 information about product in a single dimension table called Product hierarchy dimension table.
 - 3 dimension(from same hierarchy) in 1 dimension table
 <img width="451" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/b4f828cb-1ffd-4b4f-bd1a-c9ef5c3613e5">
@@ -74,7 +75,7 @@ Dimensional Context most often answer question by ? and for?
  1. Additive  Fact == can be added under all circumstances eg. Salary. here we can add veritically salary of all employees
   <img width="288" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/a47b0a2d-45d3-4b7f-88c4-eefef2854b1e">
   
-    also horizontally salary of same persion across time
+also horizontally salary of same person across time
     
   <img width="467" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/186c1381-f4a1-4acf-9f5b-fe0bc4f24f6e">
 
@@ -106,11 +107,12 @@ Dimensional Context most often answer question by ? and for?
  - Preferred over a natural key in data warehouse
  - should be used for the primary keys of the dimension tables
  - In below example Faculty_key is the surrogate key that is generated. usually used with _key in column name.
+
 <img width="400" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ce867c2f-56f6-4109-84a3-ba3b0bc41c70">
 
 
 <img width="466" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/868e1530-9f35-493d-a8d5-3d8667d19296">
-
+<br>
 <img width="495" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/7ace79f9-7547-4f77-9c20-25a0a3921007">
 
 # PTR
