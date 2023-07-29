@@ -58,4 +58,9 @@
 - 
 <img width="575" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/bcdfef61-3b68-4783-bab7-f661f66e2df7">
 
-
+# High level step
+- data preparation
+- data transformation
+- process and load data in dimension table
+- process and load the type 1 and type 2 changes.
+- process and load data into fact table.
