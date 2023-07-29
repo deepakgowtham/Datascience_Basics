@@ -67,3 +67,11 @@
 
 # PTR
 - You can process dimension tables in parallel with each other, after all the dimension tables are process we can process fact tables in parallel.
+- independent of the platform the data is always dimensional
+<img width="588" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/f5058460-da6e-4551-81bd-890dbdb0505f">
+
+- For user facing BI -> the data should be dimensional no matter the technology used.
+
+Additional resources.
+<img width="443" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/213c75a6-0069-4338-9622-8a535729a110">
+
