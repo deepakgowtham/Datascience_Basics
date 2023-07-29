@@ -64,3 +64,6 @@
 - process and load data in dimension table
 - process and load the type 1 and type 2 changes.
 - process and load data into fact table.
+
+# PTR
+- You can process dimension tables in parallel with each other, after all the dimension tables are process we can process fact tables in parallel.
