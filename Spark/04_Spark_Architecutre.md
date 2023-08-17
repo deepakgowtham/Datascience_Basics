@@ -71,9 +71,32 @@ Job  -> Stage -> Task
 ### Wide stage
 - Wide stages are stages where the data needs to be shuffled across the nodes in the cluster. This is because each task in a wide stage operates on all the partitions of its parent RDD. Wide stages involve a data shuffle and are typically more expensive than narrow stages.
 
-## Task
+### Task
 
 - One task per one Partition of data.
 - one task on one partition is executed in one executor
 - stages are broken into tasks.
 
+
+## Spark Datastructure
+1. RDD
+2. Dataframe
+3. Dataset
+
+
+### RDD
+- Resilient = fault tolerant
+- Distributed dataset = present across different nodes in cluster
+- RDD contains unstructured data as text
+
+
+### Dataframe
+- built on top of RDD
+- contains structured data in tabular form (row objects)
+- supports semi structured (json, xml), unstructured (text, images) and structured.
+
+### Dataset
+- only for java /scala with type safety -> enforce data type
+- java /scala code is compiled before execution where as in Python and R code is not compiled before execution.
+
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/e237ced4-57ff-486d-ad68-6d03c7d7c5dc">
