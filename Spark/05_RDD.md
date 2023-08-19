@@ -44,10 +44,16 @@ rdd2 =rdd1.map(lambda a:a+10)
 
 
 ### Filter
-```python
 - filter(func)
 - return a new dataset formed by selecting those elements of the source on which the func returns true
 
 ```python
 even_rdd =rdd2.filter(lambda a:a%2 ==0) # check for every element if mod 2 is zero
 ```
+## Wide transformation
+Union - same as union all - Narrow
+Intersect - inner join  - wide
+subtract - a-b = remove common data and save only data from A - wide
+
+<img width="391" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/23f65d26-62d8-4059-8f2f-1dea8455ebe3">
+
