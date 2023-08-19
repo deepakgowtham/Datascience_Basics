@@ -100,3 +100,15 @@ Job  -> Stage -> Task
 - java /scala code is compiled before execution where as in Python and R code is not compiled before execution.
 
 <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/e237ced4-57ff-486d-ad68-6d03c7d7c5dc">
+
+
+# Shuffle
+- When data is moved from one partition to other
+- Shuffle happens in wide transformation
+- when a shuffle happen a stage is added in the spark job
+- No of shuffle = no of stages.
+- Spark will gather the required data from each partition and combine it into a new partition, on a different executor.
+- During shuffle data is written into disk and transferred across the network, halting spark's ability to do processing in memory and causing performance bottle neck.
+- Happens in two stages Shuffle read and Shuffle write.
+
+  <img width="430" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/cbd3488b-c1ff-4a73-bc9a-780f5a151f55">
