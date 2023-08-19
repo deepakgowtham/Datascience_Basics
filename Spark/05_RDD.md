@@ -57,3 +57,19 @@ subtract - a-b = remove common data and save only data from A - wide
 
 <img width="391" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/23f65d26-62d8-4059-8f2f-1dea8455ebe3">
 
+# Key value pair transformation
+
+## groupByKey
+- first each data is seperated and shuffled depending on the key and then aggregation is performed finally.
+- more data is shuffled for aggregation operation.
+rdd.groupByKey().collect() # group all the values associated with a particular key
+
+<img width="518" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/982eae24-aadd-496b-9278-aae57b2909d4">
+
+## ReduceByKey
+- at each partition first the aggregation is performed then shuffled to new partition and again aggregation is performed.
+- less data is shuffled during aggregation when compared to groupByKey
+rdd.reduceByKey(func).collect()
+
+
+<img width="505" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c60c2519-6a4d-4eb7-a999-472350a13696">
