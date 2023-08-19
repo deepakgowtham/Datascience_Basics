@@ -273,3 +273,19 @@ spark.udf.register('udfname', custom_func, StringType())
  2. in addition to JVM the udf code also requires python workers in each executor node.
 
 
+# Repartition vs Coalesce vs partitionby
+## Repartition
+- can be used for increasing or decreasing partitions
+- recreate new partitions from scratch and perform shuffle to move data
+- creates unbalanced partitions or may contain empty partition.
+- Wide transformation
+
+## Coalesce 
+- can be only to decrease partitions
+- combine nearby partitions or adjust using existing partitions
+- cannot create new partitions
+- creations balanced partitions
+- Narrow transformation
+
+## PartitionBy
+- partition based on condition or using a categorical column
