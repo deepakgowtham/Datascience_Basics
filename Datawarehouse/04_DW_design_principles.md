@@ -40,6 +40,12 @@ Dimensional Context most often answer question by ? and for?
   
 <img width="444" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/02de5faf-9266-4227-8f0d-fbb18c65fcd8">
 
+## Hierachical vs flat dimension.
+- Dimension having a hierarchy
+- here faculty dimension has a defined hierarchy where as student table doesnt fit in any of this hierarchy
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/14ebe23e-9569-437f-bcaf-5640f8f8b37e)
+
+
 # Dimension tables
  - Provide key data warehousing subject areas.
  - subject areas that provide context to measurements.
@@ -104,10 +110,6 @@ Dimensional Context most often answer question by ? and for?
 - subset for other dimension.
 - time could be shrunken into hours dimension, minute dimension, second dimension.
 
-## Hierachical vs flat dimension.
-- Dimension having a hierarchy
-- here faculty dimension has a defined hierarchy where as student table doesnt fit in any of this hierarchy
-![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/14ebe23e-9569-437f-bcaf-5640f8f8b37e)
 
 # Star vs Snowflake
 - We represent fact and dimensions in either Star schema or snowflake schema
