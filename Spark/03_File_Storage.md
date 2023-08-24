@@ -33,3 +33,41 @@ volume + velocity+ variety +veracity(who much we can trust the data or quality o
 
 - in PC no of cores =4 and logical processors =8 means it can run 32 process or it has 32 vcpus
 - in cloud compute 1 core = 1 process 2 cores cpu runs 2 v cpus
+
+# File format
+
+- ORC
+- parquet
+- avro
+
+## ORC
+- Optimized row columnar
+- Column storage
+- by default uses snappy compression in databricks
+- Provides best compression when compared to other file formats
+- orginated in hive platform
+
+## parquet
+- column storage
+- data is stored in header(format information), body (data in encoded form), footer (index and metadata  as json)
+- the schema information is present in JSON format in footer
+
+
+## Avro
+- row storage format
+- mostly used in streaming applications like kafka sources.not preferred for storage as it is row based (slower read)
+- data is stored in header(format information, schema as json), body (data in encoded form), footer (index )
+- spark.read.format('avro') - direct api is not available for avio
+- for column storage data spark job contains a step to convert from column to row(dataframe is displayed in row format)
+
+<img width="485" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/46fadace-f0b4-4d20-aae2-f1ff9b26d64e">
+
+
+## JSON
+- semi structured
+- web based api
+- can be multi line json
+
+## XML
+- mostly middleware applications.
+
