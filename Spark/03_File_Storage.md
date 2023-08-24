@@ -62,6 +62,9 @@ volume + velocity+ variety +veracity(who much we can trust the data or quality o
 
 <img width="485" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/46fadace-f0b4-4d20-aae2-f1ff9b26d64e">
 
+<img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/97b8c785-8e17-43e4-bf88-1c8f32c30e40">
+
+<img width="329" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/955bcdc1-9654-42d8-8ad2-4cedc666a327">
 
 ## JSON
 - semi structured
