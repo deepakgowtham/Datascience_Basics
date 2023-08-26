@@ -70,7 +70,12 @@ volume + velocity+ variety +veracity(who much we can trust the data or quality o
 - semi structured
 - web based api
 - can be multi line json
+- spark.read.option('multiline',True).json('filename')
+- complex data type with json struct (dictionary), array, map
+- explode function to flatten the array data type, where it creates new rows 
+- for struct we can select using the keys
 
 ## XML
+- semi strcutured
 - mostly middleware applications.
 
