@@ -75,7 +75,27 @@ volume + velocity+ variety +veracity(who much we can trust the data or quality o
 - explode function to flatten the array data type, where it creates new rows 
 - for struct we can select using the keys
 
+
+
+## Excel
+- directly no support for xls or xlsx file from databricks, we need to use third party library
+- download the library from maven
+- in compute, select the cluster and in library tab
+
+<img width="380" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/089de249-ff6f-4963-bf6d-1c6c99f7eace">
+
+<img width="371" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/66adddcd-4492-4ffb-94f6-77462d1d5065">
+
+- after the we can use spark.read.format('excel').load('filename', header=True)
+- spark.read.format('com.crealytics.spark.excel').load('filename', header=True)
+- multiple sheet excel files are not supported.
+
+
 ## XML
 - semi strcutured
 - mostly middleware applications.
-
+- no direct support from spark for xml files
+- instal spark-xml from maven repo
+- after installation we can read xml data
+- Manually define the structure of the xml when reading if it is not in default ROWS, ROW format
+- xml_df =spark.read.format('xml').option('roottag', 'ROWS').option('rowtag','ROW').load()
