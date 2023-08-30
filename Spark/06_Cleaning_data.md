@@ -26,3 +26,8 @@ print(" split_df:\t%d\n joined_df:\t%d\n invalid_df: \t%d" % (split_count, joine
 invalid_folder_count = invalid_df.select('folder').distinct().count()
 print("%d distinct invalid folders found" % invalid_folder_count)
 ```
+
+# Read mode
+1. Permissive (default) - nulls are inserted for fields that are not parsed correctly.
+2. DROPMALFORMED - drops rows that contains fields that cannot be parsed.
+3. FAILFAST - doesnt read if data contains fields out of pattern.
