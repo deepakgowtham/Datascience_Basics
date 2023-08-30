@@ -31,3 +31,32 @@ print("%d distinct invalid folders found" % invalid_folder_count)
 1. Permissive (default) - nulls are inserted for fields that are not parsed correctly.
 2. DROPMALFORMED - drops rows that contains fields that cannot be parsed.
 3. FAILFAST - doesnt read if data contains fields out of pattern.
+spark.read.option('mode','DROPMALFORMED').schema(csvschema).csv('filename') - only the data that is defined as per the schema is read others are ignored
+
+# Identify bad data and store in seperate table.
+- columnNameOfCorruptRecord
+- badRecordsPath
+
+## columnNameOfCorruptRecord
+- define an additional column in schema in addition to other rows.
+- add a additional parameter columnNameOfCorruptRecord and give the additional column name
+- the mode should be PERMISSIVE
+```python
+StructField('bad_data', StringType(), True)
+df= spark.read.option('mode', 'PERMISSIVE').schema(csvschema).csv('filename', header=True, columnNameOfCorruptRecord='bad_data')
+```
+- here display (df.filter('bad_data is not null').select('bad_data') doent work and produces empty dataframe eventhough the data is present.
+- this is because the new column bad_data is not available in source
+- to get this data we need to cache the dataframe
+- df.cache() there it will be stored in memory
+- after that if we query   display (df.filter('bad_data is not null').select('bad_data') then it will return the result.
+
+
+## badRecordsPath
+
+```python
+df=spark.read.schema(csvschema).option('badRecordsPath', '/tmp/baddata').csv('filename', header=True)
+```
+- the bad records will placed in the path in json format along with the error, because of which it was not read.
+- the data will be placed in a timestamp based folder structure.
+bad_df=spark.read.json('/tmp/baddata/*/*')
