@@ -289,3 +289,35 @@ spark.udf.register('udfname', custom_func, StringType())
 
 ## PartitionBy
 - partition based on condition or using a categorical column
+
+# Broadcast and accumulator variables
+- In pyspark, when creating python variables list, string, dictionary etc, they are created in driver node and the variables are not distributed whereas data frame is distributed and no prallelism is present. To fix this we have broadcast variables and accumulator variables.
+  
+##  Broadcast variable
+- Place a copy of variable in all the worker node
+
+  ```python
+  list1= [1,2,3,4]
+  broad_list1 = sc.broadcast(list1)
+  ```
+
+## Accumulator variables
+- Used for aggregation of information
+- serves as a global variable, the tasks are in several different machines a local variable can be incremented but its value will be different amoung the workers
+
+```python
+
+accum_num= sc.accumulator(0)
+
+
+def f(x):
+   global accum_num   # we are declaring it as global as it is inside the function and shouldnt consider it as local 
+   accum_num += x
+
+rdd1 = sc.parallelize ([10, 22, 33,44,55])
+result =rdd1.foreach(f)
+
+```
+- the worker nodes can modify the value using += operator but cannot read the value
+- only driver node can read the value.
+
