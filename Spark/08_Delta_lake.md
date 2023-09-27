@@ -45,7 +45,13 @@ spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", "False")
 optimize delta `/tmp/emp_delta` zorder by (DayOfWeek)
 ```
 - create partition wise uniformly sized files.
+- can be made on 1 or more columns by comma seperated.
 - remove the small file problem
 - if the number of files to be read is lesser, the number for file I/O will be reduced there by reducing the time.
 - it will also sort the data using the column mentioned in zorder by
 - this activity is not performed daily, is a performance tuning activity to improve performance.
+- zorder is a dataskipping algorithim like indexing to skip the data and get the data that we want.
+- Usually the column the frequently filtered or joined is used for creation of zorder
+
+
+# Merge Operation
