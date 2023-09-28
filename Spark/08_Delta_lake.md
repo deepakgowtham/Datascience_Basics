@@ -90,4 +90,18 @@ df_employee_tgt.alias("t").merge(df_emp_source.alias("s"),"t.id = s.id")\
 .whenMatchedUpdateAll()\
 .whenNotMatchedInsertAll()\
 .execute()
+
+
+df_employee_tgt.alias("tgt").merge(
+    df_emp_source.alias("src"),
+    "tgt.id = src.id") \
+  .whenMatchedUpdate(set = { "name" : "src.name" ,"loc":"src.loc"} ) \
+  .whenNotMatchedInsert(values =
+    {
+      "id": "src.id",
+      "name": "src.name",
+      "loc": "src.loc"
+    }
+  ) \
+  .execute()
 ```
