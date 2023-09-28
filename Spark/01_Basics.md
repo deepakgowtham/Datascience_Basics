@@ -217,6 +217,7 @@ airports = airports.withColumnRenamed('faa','dest')
 
 ```python
 flights.join(airports, on='dest', how='leftouter')
+df_emp_csv.join(df_dept_csv,df_emp_csv["DEPTNO"]==df_dept_csv["Deptno"],'full')
 ```
 ## Cast()
 - used to assign proper data types
