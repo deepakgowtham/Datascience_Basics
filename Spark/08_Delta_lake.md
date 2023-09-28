@@ -55,3 +55,39 @@ optimize delta `/tmp/emp_delta` zorder by (DayOfWeek)
 
 
 # Merge Operation
+- merge operation happens in 7 steps
+
+- INSERT or UPDATE parquet: 7-step process
+With a legacy data pipeline, to insert or update a table, you must:
+
+Identify the new rows to be inserted
+Identify the rows that will be replaced (i.e. updated)
+Identify all of the rows that are not impacted by the insert or update
+Create a new temp based on all three insert statements
+Delete the original table (and all of those associated files)
+"Rename" the temp table back to the original table name
+Drop the temp table
+INSERT or UPDATE with Delta Lake
+2-step process:
+- where as in delta lake its a two step process
+Identify rows to insert or update
+Use MERGE
+
+```sql
+%sql
+MERGE INTO all_employee as t
+Using emp_source as s
+ON t.id = s.id
+WHEN MATCHED THEN 
+update set *
+WHEN NOT MATCHED THEN 
+insert *
+
+```
+in pyspark.
+```python
+df_employee_tgt.alias("t").merge(df_emp_source.alias("s"),"t.id = s.id")\
+.whenMatchedUpdateAll()\
+.whenNotMatchedInsertAll()\
+.execute()
+```
