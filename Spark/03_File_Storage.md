@@ -99,3 +99,25 @@ volume + velocity+ variety +veracity(who much we can trust the data or quality o
 - after installation we can read xml data
 - Manually define the structure of the xml when reading if it is not in default ROWS, ROW format
 - xml_df =spark.read.format('xml').option('roottag', 'ROWS').option('rowtag','ROW').load()
+
+
+# Distributed File storage and regular file storage.
+- Databricks has dbfs (Databricks Distributed File System)
+- this can be accessed only in pyspark and not from regular python API's
+- accessed using dbfs:/filestore/tmp
+
+# Regular file storage.
+- Not a distributed storage
+- can be accessed using regular python api
+- accessed using file:/tmp
+
+```python
+import requests
+resp =requests.get('https://health.data.ny.gov/resource/xdss-u53e.csv')
+with open("/tmp/input.csv") as file:
+   file.write(resp.text)
+
+dbutils.mv("file:/tmp/input.csv", "dbfs:/filestore/data/")
+```
+# Run one databricks note book from other
+%run ./notebook_name
