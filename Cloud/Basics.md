@@ -21,4 +21,18 @@
 - Horizontal scaling  - adding additional machines to increase compute capacity.
 - Auto scaling - Automatically increase compute capacity depending on need, traffic, and memory utilization.
     1. scaling out - Adding more servers
-    2. Scaling in - remove servers 
+    2. Scaling in - remove servers
+ 
+
+# Types of Cloud servers
+
+##Virtual Machines
+
+## Containers
+- indedendent consistent and isolated execution environment 
+- they dont require any os as they just contain minimum dependencies to run the app
+<img width="239" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/8ee23eb5-7016-4e71-b702-ff933a8c1f7e">
+
+## Serverless 
+- ability to run an application without creating, configuring nor maintaining a server.
+- break application into different smaller pieces
