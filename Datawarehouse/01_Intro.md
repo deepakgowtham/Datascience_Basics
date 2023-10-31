@@ -44,3 +44,20 @@
  <img width="584" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/61d540d7-ecaf-43b1-b35d-9136ba9d2b9b">
 
  
+# Big data vs MPP (Masively Parllel processing) (Datawarehouse)
+
+## Big data
+- File system based.
+- Huge compute (Master and slave architecture)
+- Storage seperate and compute seperate
+- its available on cloud and on prem
+- target goal is advanced analytics ML, DL, DS
+- its supports mulitple languages
+
+## MPP (Datawarehouse)
+- Database
+- structured data
+- limitations on compute
+- seperate storage and compute
+- cloud and on prem solution available
+- sql is the primary language
