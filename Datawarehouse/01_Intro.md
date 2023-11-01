@@ -61,3 +61,4 @@
 - seperate storage and compute
 - cloud and on prem solution available
 - sql is the primary language
+- data is stored based on partitioning algorithms
