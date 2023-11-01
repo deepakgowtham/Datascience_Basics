@@ -1,9 +1,12 @@
 # Data center
 
-- each data center will have different zones inside them.
+- Many Azure regions provide availability zones, which are separated groups of datacenters within a region. Availability zones are close enough to have low-latency connections to other availability zones. They're connected by a high-performance network with a round-trip latency of less than 2ms.
 - data will be stored parallelly in different zones.
+
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/96fbe6d5-6e0f-4282-a801-cc616e1ca95e)
+
 - inside each zone there will be RAC's and inside RAC there will be clusters.
-- load balancing between zones is automatically taken care
+- load balancing between zones is automatically taken care for zonal redundent resources
 - Datacenter is placed in different **region** and **Geographies**
 - Regions are geographies containing more than one datacenters.
 - Geographies are defined by Geopolitical boundries, compliance needs
