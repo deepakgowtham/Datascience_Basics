@@ -20,6 +20,19 @@ def test_add():
     result = num_func.addnum(1, 3)
     assert result == 4
 ```
+we can also do handle error when we execpt function to raise some type of error like ValueError or ZeroDivisionError.
+
+```python
+
+def divnum(number_one, number_two):
+    if number_two == 0:
+        raise ValueError
+    return number_one / number_two
+
+def test_divide_by_zero():
+    with pytest.raises(ValueError):
+        num_func.divnum(1,0)
+````
 
 ## Class based tests
 - used for testing python class
@@ -84,3 +97,34 @@ def new_rectangle():
     return shapes.Rectangle(5, 10)
 ```
 - the decorated function can also be placed in conftest.py file within test package and can be used within the package 
+
+
+# Marker
+
+- if some function is expected to take more time to produce an output, we can mark them as slow function and run them seperately.
+``` python
+@pytest.mark.slow
+def test_div():
+    time.sleep(4)
+    result = num_func.divnum(10, 5)
+    assert result == 2
+
+pytest -m slow # only function that is marked as slow will run
+
+```
+
+- @pytest.mark.skip - to skip some testing function
+- @pytest.mark.xfail - when we expect particular function to fail
+- output summary will contain  3 passed, 1 skipped, 1 xfailed, indicating our markers
+
+# Parameterized testing
+
+- Suppose we want test a function for multiple input values, instead of writing a seperate function for each, we can use same function with mulitple input
+- while looping is possible, we can use parametrization for better readability.
+
+```python
+
+@pytest.mark.parametrize('side_length, expected_area', [(5, 25), (4, 16), (2, 4)])
+def test_multiple_square(side_length,expected_area):
+    assert shapes.Square(side_length).area() == expected_area
+```
