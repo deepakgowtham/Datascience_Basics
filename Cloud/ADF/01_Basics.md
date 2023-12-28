@@ -11,5 +11,7 @@
 - Pipelines
 - Datasets
 - Linked services (Connections)
-- Integration Runtime (Compute)
+- Integration Runtime -> serverless compute
+   a. Azure integeration Runtime -> used when data is migrated between two azure cloud services
+   b. Self hosted Integration Runtime -> used when data is migrated from on prem to azure cloud service
 - Data Flow (not used more commonly)
