@@ -58,3 +58,99 @@ Files will be synced asynchrously between regions/zones
 ## Serverless 
 - ability to run an application without creating, configuring nor maintaining a server.
 - break application into different smaller pieces
+
+
+# On prem server
+- Total cost of Ownership
+
+# cloud 
+- data is mostly stored as JSON containing the LCID.
+- LCID -> Language Code Identifier using this data can be transformed from one language to another.
+
+**Data wrangling** is the process of getting, ingesting, transforming, validating, and cleaning data.
+
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/aa68fdd6-6eaf-4f88-bf79-5a0b8565cba5)
+
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/daca00bc-e122-41b3-9931-016d34e7cb8e)
+
+
+# Data types
+## Structured data.
+- stored in relational database
+- schema is predefined before load
+- adapts slowly to changes.
+
+## Unstructured data.
+- Key value pair -binary image, audio files.
+- stored in Non Relational systems or no sql systems
+- data structure is not defined in design time and is loaded in raw format
+- data structure is defined when it is read
+### 4 types of No sql databases
+1. Key value store -stores key-value pairs of data in a table structure.
+2. Document database - stores documents with meta data to aid in search
+3. Graph database - finds relationship between stored database using datapoints called vertices and edges.
+4. Column database - stores data in columns instead of rows and columns can be defined in query runtime and allowing flexibility in the data that's returned
+
+
+
+## azure storage service
+- 4 types
+1. Azure Blob - a scalable object store for text and binary data, doesnt support querying.
+2. Azure files - managed file shares for cloud and on prem
+3. Azure Queue -  a messaging store for reliable messaging between application components
+4. Azure table - no sequel store for no schema storage of structured data
+- Role based acces control (RBAC)
+- support for CLI
+## Two types of application
+- standalone use - works independently or sometimes with other applications
+- storage basis for other apps  -  Azure storage as the storage basis when you are provisioning a data platform technology such as Azure Data lake storage and HD insight
+
+## Data ingestion
+- Azure data factory
+- storage explorer
+- azcopy - supports a maximum file size of one terabyte and automatically splits Data files that exceed 200 GB.
+- powershell - use when file size more than 2GB
+- visual studio   - use when file size more than 2GB
+
+# Azure Data services
+## Azure data lake storage.
+- Azure Data Lake Storage is a Hadoop compatible data repository that can store any size or type of data.
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/34d4fd4a-4cdc-464a-b96c-66036099bd42)
+- The compute that sits on top of Data lake can vary depending on our choice and use case like HDinsight or Hadoop or Databricks
+- Features
+   1. Unlimited Scalability
+   2. Hadoop compatibility
+   3. Securtiy using Access Control List(ACL).-- using azure active directory.
+   4. POSIX compliance
+   5. Optimized Azure Blob File system (ABFS) driver - that is designed for Big data
+   6. zone redundant storage and geo redundant storage
+- For data ingestion we can use apache scoop, azcopy. adf
+- query using azure blob storage API or azure data lake system API.
+  ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/919813bd-6dbd-4b2b-adde-96ca025d8404)
+
+  ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/0e02e6f8-6cb3-4530-ac6d-97783519d577)
+  security can also be implemented using RBAC.
+
+## Azure cosmos db
+- multi modal API.
+- can be implemented using any of the following APIs.
+1. SQL API
+2. MongoDB API
+3. Cassandra API
+4. Gremlin API
+5. Table API
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d93117ee-ec06-4231-9f7e-b13226494d57)
+- Mongo for semi structured data
+- casendra for wide column
+- gremlin for graph database.
+- 5 9s uptime and 10ms response time.
+- multi national replciation
+
+## Azure sql database.
+- similar to on prem sql server but has more advantages.
+- faster scale up and down on demand.
+- built in optimization.
+
+
+
+
