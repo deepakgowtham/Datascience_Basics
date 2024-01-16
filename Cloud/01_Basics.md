@@ -157,6 +157,36 @@ security can also be implemented using RBAC.
 - faster scale up and down on demand.
 - built in optimization.
 
+# Supporting tools for Azure data services.
+## [Synapse](https://github.com/deepakgowtham/Datascience_Basics/blob/main/Cloud/Synapse/01_Basics.md)   
+- Synapse SQL offers both serverless and dedicated resource models to work with both descriptive and diagnostic analytical scenarios
+- For predictable performance and cost, create dedicated SQL pools to reserve processing power for data stored in SQL tables.
+- Unlike dedicated SQL pools where the user pays for reserved resources at a pre-decided scale, the cost of serverless SQL is calculated per TB or data processed based on the queries run. The pricing of serverless SQL pool is around 5 USD per TB of data processed, but costs can quickly rise if the queries run are above large multi TB datasets.
+## Azure Stream Analytics
+-  Azure stream analytics to process streaming data and respond to data anomalies in real time.
+-  Use data ingestion in stream analytics by configuring data inputs from first class integration sources. These sources include Azure event hubs. Azure IoT hub and Azure Blob storage
+-  **IoT hub** - bidirectional data transfer from IoT devices
+-  **Azure event hub** - provide big data streaming service. It's designed for high data throughput allowing customers to send billions of requests per day. And event hubs uses a partitioned consumer model to scale out Azure data stream.
+   - This service is integrated into the big data and analytics services of Azure.
+   - These include Databricks, Stream Analytics, Azure Data Lake Storage and HDInsight.
+   - Event hubs provides authentication through a shared key. You can use Azure storage to store data before you process it in batches
+   - Partitioned consumer model -Event Hubs uses a partitioned consumer model to scale out your data stream and is integrated into the big data and analytics services of Azure including Databricks, Stream Analytics, ADLS, and HDInsight.
+-  To process streaming data set up stream analytics jobs with input and output pipelines. Inputs are provided by event hubs, IoT hubs and Azure storage
+-  For job transformation use simple declarative SQL.
+   
+## Azure HDInsight
+- contains - Hadoop, Spark, Hbase, kafka, storm, Hive (interactive querying).
+- Hadoop contains Apache Hive, HBase, Spark, and Kafka. Hadoop stores data in a file system or HDFS, and Spark stores data in memory.
+- HBase - is a no sql database built on top of Hadoop It's commonly used for search engines. HBase offers automatic failover
+  
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/4f976fbd-71c5-40c7-9963-1d8ceaaebcdd)
 
-
-
+- Mapper consumes and analyzes input data. It then emits tuples that reducer can analyze. Finally, reducer runs summary operations to create a smaller combined result set.
+## Azure databricks
+- adds capabilities to Apache spark, including fully managed spark clusters and an interactive workspace
+## Azure data factory
+- Azure data factory is a cloud integration service. It orchestrates the movement of data between various data stores. The purpose of Azure data factory is to retrieve data from one or more data sources and convert it into a format that you process
+## Azure data catalog
+- Data catalog is a fully managed Cloud service. Users discover and explore data sources, and they help the organization document information about their data sources. It is important to note that the data catalog will soon be replaced by **Azure purview**.
+- create unified data map
+- search data faster, analyze data more in depth.
