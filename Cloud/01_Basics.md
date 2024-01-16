@@ -136,13 +136,14 @@ Files will be synced asynchrously between regions/zones
 security can also be implemented using RBAC.
 
 ## Azure cosmos db
-- multi modal API.
+- globally distributed multi-model database.
 - can be implemented using any of the following APIs.
 1. SQL API
 2. MongoDB API
 3. Cassandra API
 4. Gremlin API
 5. Table API
+6. Lambda API
 
 ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d93117ee-ec06-4231-9f7e-b13226494d57)
 
@@ -159,6 +160,7 @@ security can also be implemented using RBAC.
 
 # Supporting tools for Azure data services.
 ## [Synapse](https://github.com/deepakgowtham/Datascience_Basics/blob/main/Cloud/Synapse/01_Basics.md)   
+- Integrated analytics platform and brings together Data warehousing, Big data analytics,Data backup
 - Synapse SQL offers both serverless and dedicated resource models to work with both descriptive and diagnostic analytical scenarios
 - For predictable performance and cost, create dedicated SQL pools to reserve processing power for data stored in SQL tables.
 - Unlike dedicated SQL pools where the user pays for reserved resources at a pre-decided scale, the cost of serverless SQL is calculated per TB or data processed based on the queries run. The pricing of serverless SQL pool is around 5 USD per TB of data processed, but costs can quickly rise if the queries run are above large multi TB datasets.
