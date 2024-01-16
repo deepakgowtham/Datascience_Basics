@@ -154,9 +154,11 @@ security can also be implemented using RBAC.
 - multi national replciation
 
 ## Azure sql database.
+- Azure SQL Database, a managed relational database service supporting structures such as relational data and unstructured formats such as spatial and XML data.
 - similar to on prem sql server but has more advantages.
 - faster scale up and down on demand.
 - built in optimization.
+
 
 # Supporting tools for Azure data services.
 ## [Synapse](https://github.com/deepakgowtham/Datascience_Basics/blob/main/Cloud/Synapse/01_Basics.md)   
