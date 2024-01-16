@@ -166,6 +166,7 @@ security can also be implemented using RBAC.
 - Synapse SQL offers both serverless and dedicated resource models to work with both descriptive and diagnostic analytical scenarios
 - For predictable performance and cost, create dedicated SQL pools to reserve processing power for data stored in SQL tables.
 - Unlike dedicated SQL pools where the user pays for reserved resources at a pre-decided scale, the cost of serverless SQL is calculated per TB or data processed based on the queries run. The pricing of serverless SQL pool is around 5 USD per TB of data processed, but costs can quickly rise if the queries run are above large multi TB datasets.
+- In Azure Synapse Analytics, the Data Movement Service (DMS) coordinates and transports data between compute nodes as necessary.
 ## Azure Stream Analytics
 -  Azure stream analytics to process streaming data and respond to data anomalies in real time.
 -  Use data ingestion in stream analytics by configuring data inputs from first class integration sources. These sources include Azure event hubs. Azure IoT hub and Azure Blob storage
