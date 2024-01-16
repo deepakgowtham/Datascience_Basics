@@ -11,6 +11,9 @@
 - sql is primary language.
 - data is split based on partition algorithims
 - max nodes supported is 60
+- Polybase to ingest the data
+- PolyBase is a technology that removes complexity for data engineers. They take advantage of techniques for big data ingestion and processing by offloading complex calculations to the Cloud
+- ADF can be configured to use polybase tool.
 
   Two types in synapse
 1. Dedicated SQL Pool (DWH) (compute limited to max 60 nodes)
