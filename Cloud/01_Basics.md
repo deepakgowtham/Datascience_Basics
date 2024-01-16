@@ -115,7 +115,9 @@ Files will be synced asynchrously between regions/zones
 # Azure Data services
 ## Azure data lake storage.
 - Azure Data Lake Storage is a Hadoop compatible data repository that can store any size or type of data.
+
 ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/34d4fd4a-4cdc-464a-b96c-66036099bd42)
+
 - The compute that sits on top of Data lake can vary depending on our choice and use case like HDinsight or Hadoop or Databricks
 - Features
    1. Unlimited Scalability
@@ -126,10 +128,12 @@ Files will be synced asynchrously between regions/zones
    6. zone redundant storage and geo redundant storage
 - For data ingestion we can use apache scoop, azcopy. adf
 - query using azure blob storage API or azure data lake system API.
-  ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/919813bd-6dbd-4b2b-adde-96ca025d8404)
+  
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/919813bd-6dbd-4b2b-adde-96ca025d8404)
 
-  ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/0e02e6f8-6cb3-4530-ac6d-97783519d577)
-  security can also be implemented using RBAC.
+![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/0e02e6f8-6cb3-4530-ac6d-97783519d577)
+
+security can also be implemented using RBAC.
 
 ## Azure cosmos db
 - multi modal API.
@@ -139,7 +143,9 @@ Files will be synced asynchrously between regions/zones
 3. Cassandra API
 4. Gremlin API
 5. Table API
+
 ![image](https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d93117ee-ec06-4231-9f7e-b13226494d57)
+
 - Mongo for semi structured data
 - casendra for wide column
 - gremlin for graph database.
