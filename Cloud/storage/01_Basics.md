@@ -1,5 +1,7 @@
 <img width="413" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c1ab95f5-f9d8-40c5-a61f-7c028db8e8b3">
+
 - sql and cosmos are special and are not included in storage account.
+
 # Azure storage types
 1. Data lake gen 1 (only used in projects before 2019, to be retired 2024)  
 2. Azure blob storage
