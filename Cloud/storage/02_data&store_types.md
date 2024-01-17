@@ -29,5 +29,20 @@
 - Atomicity means a transaction must execute exactly once and must be automic, either all of the work is done or none of it is. Operations within a transaction usually share a common intent and are interdependent.
 - Consistency ensures that the data is consistent both before and after the transaction.
 - Isolation ensures that one transaction is not impacted by another transaction.
-- Durability means that the changes made due to the transaction are permanently saved in the system. Committed data is saved by the system so that even in the event of a failure and system restart, the data is available in its correct state. 
-- 
+- Durability means that the changes made due to the transaction are permanently saved in the system. Committed data is saved by the system so that even in the event of a failure and system restart, the data is available in its correct state.
+- Business data requries transaction support where as photos and videos that are not updated frequently doesnt require transcation support.
+## Consistency levels in cosmos db
+- indexes every field by default.
+<img width="581" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/b6bbbaab-79ad-4379-846d-2d7f833ccc0a">
+- Eventual consistency provides the lowest latency and the least consistency. Strong consistency results in the highest latency, but also the greatest consistency. By choosing the right consistency level, you can determine the trade offs to make between consistency availability, latency and throughput.
+- Eventual gives lowest latency but lowest consistency
+- strong gives hightest consistency but hightest latency
+- but choosing this correctly we can trade of between consistency, availability, latency and throughput
+- Throughput refers to how fast we can push data into the database.
+
+# Summary
+- Decide the storage solution depending on the following.
+- data classification or type
+- operations to be made
+- latency and throughput
+- transactional support
