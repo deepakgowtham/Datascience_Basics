@@ -1,9 +1,33 @@
+<img width="413" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/c1ab95f5-f9d8-40c5-a61f-7c028db8e8b3">
+- sql and cosmos are special and are not included in storage account.
 # Azure storage types
 1. Data lake gen 1 (only used in projects before 2019, to be retired 2024)  
 2. Azure blob storage
 3. Data lake store gen 2 (gen1 +blob storage)
 4. SQL server with azure sql (OLTP DB)
 5. SQL server with SQL DWH (OLAP DB)
+
+# Azure storage account
+- Storage account can contain one or many of the storage services
+- deleting the account deletes all the resources inside it.
+- The settings that are controlled by a storage account, our subscription, location, performance(standard(hdd), Premium(SSD)), replication accessed here, secure transfer required and virtual networks.
+- Access Tier - Hot : gives quicker access to data used for Frequently accessed data 
+
+<img width="410" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/9b6c6c87-c9e5-4d7c-81cb-4a8f897de81a">
+
+- A resource group can contain mulitple storage accounts.
+
+<img width="391" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/aabb0c61-e963-4a80-8d1a-469e57e07db1">
+
+- The number of storage accounts you need is typically determined by your data diversity, cost sensitivity and tolerance for management overhead
+- Mainly locaiton, billing and replication determines the number of storage accounts required.
+- More storage accounts means more complexity.
+
+ ## Storage account setting
+ - Name - Gloabaly unique
+ - Deployment Model is the system that azure uses to manage resources 1.resource manager API - mostly used. and 2. classic (service manager API)
+ - Account kind - General purpose v2 is recomended as other has less features
+   <img width="839" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d123b78f-024d-4803-8f8e-ccd9ce69743b">
 
 ## Data lake gen 1
 - can store any size/type of data
