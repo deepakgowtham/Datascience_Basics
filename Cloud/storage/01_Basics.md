@@ -29,8 +29,10 @@
  - Name - Gloabaly unique
  - Deployment Model is the system that azure uses to manage resources 1.resource manager API - mostly used. and 2. classic (service manager API)
  - Account kind - General purpose v2 is recomended as other has less features
-   <img width="839" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d123b78f-024d-4803-8f8e-ccd9ce69743b">
 
+<img width="839" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d123b78f-024d-4803-8f8e-ccd9ce69743b">
+
+- storage account can be created using azure portal or azure CLI, azure powershell or management client libraries.
 ## Data lake gen 1
 - can store any size/type of data
 - hierarchial folder structured enabled
