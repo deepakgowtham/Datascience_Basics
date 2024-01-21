@@ -15,3 +15,6 @@
 
 - Premium storage account type is for block blobs and append blobs. This is recommended for scenarios with high transaction rates, scenarios that use smaller objects, or those requiring consistently low storage latency.
 - For blobs, file shares, and queues use Standard General purpose v2
+
+# Container
+-A container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs.
