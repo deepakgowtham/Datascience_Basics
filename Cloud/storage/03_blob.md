@@ -12,4 +12,6 @@
    - Page Blobs are used primarily as the backing storage for the virtual hard disks or VHDs used to provide durable discs for Azure virtual machines or Azure VMs. They are named page blobs because they provide random read write access to 512-byte pages. 
 3. **append blobs** are made up of blocks like block blobs, but they are optimized for append operations.
    -These blobs are frequently used for logging information from one or more sources into the same blob, and to give an example, you might write all your trace logging to the same append blob for an application running on multiple VMs.
-    
+
+- Premium storage account type is for block blobs and append blobs. This is recommended for scenarios with high transaction rates, scenarios that use smaller objects, or those requiring consistently low storage latency.
+- For blobs, file shares, and queues use Standard General purpose v2
