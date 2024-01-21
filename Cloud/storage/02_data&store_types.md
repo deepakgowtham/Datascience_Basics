@@ -48,3 +48,26 @@
 - operations to be made
 - latency and throughput
 - transactional support
+
+
+# Azure files
+- Azure files enables you to set up highly available network file shares that can be accessed using the standard server message block or SMB (Server Message Block) protocol. This means that multiple VMs can share the same files with both read and write access. You can also read the files using the REST interface and the storage client libraries.
+- Shared config files
+- log files
+- shared application data
+
+# Azure queue
+- Message management
+- Large memory capacity
+- Asynchrounous processing
+
+# Azure storage API
+- Azure storage provides a Rest API to work with the containers and data stored in each account. There are independent APIs available to work with each type of data you can store
+-  Azure provides pre-built client libraries that make working with the service easier for common languages and frameworks.
+-  Need an **access key and endpoint** to access the storage account
+-  Each storage account has two unique access keys that are used to secure the storage account. If your app needs to connect to multiple storage accounts, your app will require an access key for each storage account.
+-  2 keys are provided to enable key roatation
+-  **access keys provides full access to storage account**
+-  Storage accounts offer a separate authentication mechanism called shared **access signatures** that support exploration and limited permissions for scenarios where you need to grant limited access.
+-  The REST endpoint is a combination of your storage account name, the data type, and a known domain
+-  Connection string - The simplest way to handle access keys and endpoint URLs within applications is to use storage account connection strings
