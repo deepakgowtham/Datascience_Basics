@@ -33,7 +33,9 @@
 - Business data requries transaction support where as photos and videos that are not updated frequently doesnt require transcation support.
 ## Consistency levels in cosmos db
 - indexes every field by default.
+  
 <img width="581" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/b6bbbaab-79ad-4379-846d-2d7f833ccc0a">
+
 - Eventual consistency provides the lowest latency and the least consistency. Strong consistency results in the highest latency, but also the greatest consistency. By choosing the right consistency level, you can determine the trade offs to make between consistency availability, latency and throughput.
 - Eventual gives lowest latency but lowest consistency
 - strong gives hightest consistency but hightest latency
