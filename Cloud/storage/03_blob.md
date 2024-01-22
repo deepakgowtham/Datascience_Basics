@@ -1,6 +1,6 @@
 # Blob
-- masively scalable object store for text and binary data.
-- zure blob storage is an object storage solution optimized for storing massive amounts of unstructured data, such as text or binary data.
+- Masively scalable object store for text and binary data.
+- Azure blob storage is an object storage solution optimized for storing massive amounts of unstructured data, such as text or binary data.
 - Blob storage is ideal for serving images or documents directly to a browser, including full static websites,
 - storing files for distributed access, streaming video and audio, storing data for backup and restoration.
 - Disaster recovery and archiving and storing data for analysis by on premises or Azure hosted service.
@@ -17,4 +17,4 @@
 - For blobs, file shares, and queues use Standard General purpose v2
 
 # Container
--A container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs.
+- A container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs.
