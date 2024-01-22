@@ -292,7 +292,7 @@ spark.udf.register('udfname', custom_func, StringType())
 - partition based on condition or using a categorical column
 
 # Broadcast and accumulator variables
-- In pyspark, when creating python variables list, string, dictionary etc, they are created in driver node and the variables are not distributed whereas data frame is distributed and no prallelism is present. To fix this we have broadcast variables and accumulator variables.
+- In pyspark, when creating python variables list, string, dictionary etc, they are created in driver node and the variables are not distributed and no prallelism is present whereas data frame is distributed. To fix this we have broadcast variables and accumulator variables.
   
 ##  Broadcast variable
 - Place a copy of variable in all the worker node
