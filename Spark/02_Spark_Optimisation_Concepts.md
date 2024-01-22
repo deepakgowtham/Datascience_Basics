@@ -52,7 +52,8 @@ voter_df_april.select('ROW_ID').show()
 
   ## How to cache
   - use the .cache() method in dataframe before an action.
-  ```python
+
+```python
 df.cache.count()
 
 df =df.cache()
@@ -62,7 +63,7 @@ df.is_cached
 
 #to uncache
 df.unpersist()
-  ```
+```
 # Improve load time
 - More ojbects to read is better than reading few larger file objects as multiple process can act on it simultaneously
 - If the objects are of same size spark will perform better when compared to few large and few very small files
