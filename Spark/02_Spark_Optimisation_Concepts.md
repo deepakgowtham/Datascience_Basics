@@ -65,7 +65,7 @@ df.is_cached
 df.unpersist()
 ```
 # Improve load time
-- More ojbects to read is better than reading few larger file objects as multiple process can act on it simultaneously
+- More obects to read is better than reading few larger file objects as multiple process can act on it simultaneously
 - If the objects are of same size spark will perform better when compared to few large and few very small files
 - Schema predefined will reduce import time and also provide import validation.
 
