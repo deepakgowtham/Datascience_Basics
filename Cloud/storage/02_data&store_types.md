@@ -52,6 +52,7 @@
 
 # Azure files
 - Azure files enables you to set up highly available network file shares that can be accessed using the standard server message block or SMB (Server Message Block) protocol. This means that multiple VMs can share the same files with both read and write access. You can also read the files using the REST interface and the storage client libraries.
+- Sharing data between on-premises applications and Azure VMs to allow migration of apps to the cloud over a period of time.
 - Shared config files
 - log files
 - shared application data
