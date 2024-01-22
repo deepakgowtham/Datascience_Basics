@@ -20,7 +20,7 @@
 
 - can process mulitple process simultaneously.
 - file should be stored in blocks
-- default block size 128MB
+- In Spark default block size 128MB
 - suitable for applications with high IOPS like database, analytic processing.
 - in a scenario where there is a 100 Gb file, in DFS the 100GB file is split into 102400 mb /128  =800 blocks, depending on the number of compute resources present, we can process file simultaneously.
 - in case if the file was processed as a single block it would take more time as it processed by a single compute process.
