@@ -21,6 +21,7 @@ fig.add_trace(go.Box(x=df_oil.Revenue, name='', showlegend=False), row=2, col=2)
 # Add a title (and show)
 fig.update_layout({'title': {'text': 'Box plots of company revenues', 'x': 0.5, 'y': 0.9}})
 fig.show()
+```
 
 
 # Create the subplots
@@ -108,3 +109,38 @@ fig.update_layout(
     {'rangeselector': {'buttons': date_buttons}}})
 fig.show()
 ```
+
+# Custom Buttons
+- toggle between plot types
+- udpatemenus arugments - list of dict with following
+- type button or dropdown
+- direction -  left or down
+- x/y
+- showactive - True/False
+- button
+- -args contains two dictionaries
+   1. dict to send to data
+   2. dict to send to layout
+ 
+```python
+
+# Create a simple bar chart
+fig = px.bar(data_frame=rain, x='Month', y='Rainfall')
+
+# Create the buttons
+my_buttons = [{'label': "Bar plot", 'method': "update", 'args': [{"type": [{"type": "bar"}]}]},
+  {'label': "scatterplot", 'method': "update", 'args': [{"type": [{"type": "scatter"}], 'mode': 'markers'}]}]
+
+# Add buttons to the plot and show
+fig.update_layout({
+    'updatemenus': [{
+      'type':'buttons','direction': 'down',
+      'x': 1.3,'y': 0.5,
+      'showactive': True, 'active': 0,
+      'buttons': my_buttons}]})
+fig.show()
+
+```
+
+# Dropdown
+
