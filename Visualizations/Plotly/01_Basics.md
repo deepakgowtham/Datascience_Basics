@@ -41,19 +41,19 @@ fig.show()
 - bar, histogram, box, density
   
 
-  ```python
-  import plotly.express as px
+```python
+import plotly.express as px
 
-  fig =px.bar(data_frame =df, x='day', y='temp')
-  fig.show()
+fig =px.bar(data_frame =df, x='day', y='temp')
+fig.show()
 
-  # Create the bar plot
+#Create the bar plot
 fig = px.bar(data_frame=student_scores, 
              x='student_name', 
              y='score', 
              title='Student Scores by Student')
 
-# Show the plot
+#Show the plot
 fig.show()
 ```
 
@@ -71,7 +71,7 @@ fig = px.box(
             # Add in hover data to see outliers
             hover_data=['Company'])
 
-# Show the plot
+#Show the plot
 fig.show()
 
 
@@ -83,6 +83,58 @@ fig = px.histogram(
             # Set the number of bins
             nbins=5)
 
+# Show the plot
+fig.show()
+```
+
+# Bivariate plots
+- compare two variables
+- scatter plot
+- line plot
+- correlation plot
+
+## Scatter
+- x ,y data
+- tredline
+- symbol
+
+```python
+  # Set up the color map
+color_map = {'Adelie': 'rgb(235, 52, 52)' , 'Gentoo': 'rgb(235, 149, 52)', 'Chinstrap': 'rgb(67, 52, 235)'}
+
+# Create a scatterplot
+fig = px.scatter(data_frame=penguins, title="Penguin Culmen Statistics",
+    x='Culmen Length (mm)',
+    y='Culmen Depth (mm)',
+    # Set the colors to use your color map
+    color='Species',
+    color_discrete_map=color_map
+)
+
+# Show your work
+fig.show()
+```
+
+### for more customisation
+- use go.Scatter for line and scatter plot by changing mode = markers for scatter and lines for line
+- use dataframe columns instead of column names here
+
+## Correlation plot
+```python
+# Create a correlation table with pandas
+penguin_corr = penguins.corr(method='pearson')
+
+# Set up the correlation plot
+fig = go.Figure(go.Heatmap(
+  		# Set the appropriate x, y and z values
+        z=penguin_corr.values.tolist(),
+        x=penguin_corr.columns,
+        y=penguin_corr.columns,
+  		# Set the color scale,
+        colorscale='rdylgn', 
+  		# Set min and max values
+        zmin=-1, zmax=1))
+#the min and max values of the correlation plot to align with the minimum and maximum values a Pearson correlation can take
 # Show the plot
 fig.show()
 ```
