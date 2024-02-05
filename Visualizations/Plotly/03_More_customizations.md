@@ -144,3 +144,90 @@ fig.show()
 
 # Dropdown
 
+```python
+# Create the basic figure
+fig = go.Figure()
+
+# Loop through the states
+for state in ['NSW', 'QLD', 'VIC']:
+  	# Subset the DataFrame
+    df = pop_growth[pop_growth.State == state]
+    # Add a trace for each state subset
+    fig.add_trace(go.Bar(x=df['Local Government Area'], y=df['Change %'], name=state))
+
+# Create the buttons
+dropdown_buttons = [
+{'label': "ALL", 'method': "update", 'args': [{"visible": [True, True, True]}, {"title": "ALL"}]},
+{'label': "NSW", 'method': "update", 'args': [{"visible": [True, False, False]}, {"title": "NSW"}]},
+{'label': "QLD", 'method': "update", 'args': [{"visible": [False, True, False]}, {"title": "QLD"}]},
+{'label': "VIC", 'method': "update", 'args': [{"visible": [False, False, True]}, {"title": "VIC"}]},
+]
+
+# Update the figure to add dropdown menu
+fig.update_layout({
+  		'updatemenus': [
+        {'active': 0, 'buttons': dropdown_buttons}
+        ]})
+
+# Show the plot
+fig.show()
+
+
+# Create the basic figure
+fig = go.Figure()
+
+# Loop through the suburbs
+for suburb in ['Greenacre', 'Lakemba']:
+  	# Subset the DataFrame
+    df = house_prices[house_prices.Suburb == suburb]
+    # Add a trace for each suburb subset
+    fig.add_trace(go.Scatter(
+                   x=df['Year'],
+                   y=df['Median House Price'],
+                   name=suburb, mode='lines'))
+# Annotation
+ga_annotation=[{ 'text': 'Price boom!','showarrow': True, 'x': 'Year: 2018', 'y': 712678}]
+
+# Create the buttons
+dropdown_buttons = [
+{'label': "Greenacre", 'method': "update", 'args': [{"visible": [True, False]}, {'title': 'Greenacre', 'annotations': ga_annotation}]},
+{'label': "Lakemba", 'method': "update", 'args': [{"visible": [False, True]}, {'title': 'Lakemba', 'annotations': []}]},
+]
+
+# Update the figure to add dropdown menu
+fig.update_layout({
+    'updatemenus': [{
+            'type': "dropdown",
+            'x': 1.3,'y': 0.5, 'showactive': True,'active': 0,
+            'buttons': dropdown_buttons
+            }]})
+
+# Show the plot
+fig.show()
+```
+
+# Sliders
+```python
+# Create the basic figure
+fig = go.Figure()
+
+# Loop through the states
+for season in ['Autumn', 'Winter', 'Spring']:
+  	# Subset the DataFrame
+    df = rain_pm[rain_pm.Season == season]
+    # Add a trace for each season
+    fig.add_trace(go.Bar(x=df["Month"], y=df["Total Rainfall"], name=season))
+    
+# Create the slider elements
+sliders = [
+    {'steps':[
+    {'method': 'update', 'label': 'Autumn', 'args': [{'visible': [True, False, False]}]},
+    {'method': 'update', 'label': 'Winter', 'args': [{'visible': [False, True, False]}]},
+    {'method': 'update', 'label': 'Spring', 'args': [{'visible': [False, False, True]}]}]}]
+
+# Update the figure to add sliders and show
+fig.update_layout({'sliders': sliders})
+
+# Show the plot
+fig.show()
+```
