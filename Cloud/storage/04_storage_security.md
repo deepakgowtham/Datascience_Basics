@@ -17,8 +17,29 @@
 3. A subscription
 4. A resource group 
 
-# Keys
-In Azure storage accounts, shared keys are called storage account keys
+# Storage Account Keys
+- In Azure storage accounts, shared keys are called storage account keys
+- They provide full access to the account. 
 
 # Authorized applications
 Azure Storage accounts can create authorized apps in Active Directory to control access to the data Queues and Blobs.
+
+# Shared Access Signatures (SAS)
+- Used for 3rd party application, with constraints in permission and time range of access
+- SAS is security token that can be attached to the URI
+## service level SAS
+- To allow access to specific resources in a storage account.
+- eg. app to list the list of files available.
+## Account level SAS
+- All the access of service level SAS + ability to create file systems
+
+# Network access to storage account
+- by default storage account has public access
+# Advanced threat protection
+- monitor suspicious activity and trigger alerts
+- Azure Defender for storage
+- Azure Defender for Storage is available in US government clouds and All public clouds 
+
+# Azure Data lake security.
+- all features of blob + Access control list
+- azure active directory oauth 2.0 bearer tokens
