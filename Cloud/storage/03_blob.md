@@ -6,7 +6,7 @@
 - storing files for distributed access, streaming video and audio, storing data for backup and restoration.
 - Disaster recovery and archiving and storing data for analysis by on premises or Azure hosted service.
 - Data lives in a container in blob storage, we can create unlimited number of container in a storage account and each container can contain unlimted number of files.
-- Containers cannot contain other container
+- Containers are flat. They don't support any kind of nesting or hierarchy. Containers cannot contain other container
 - Blobs and container support metadata in form name-value string pairs, metadata can contain anything.
 - Blob storage API is rest based, can be used to create and delete blob containers, upload and download blob data list the blob in a container.
 - Blobs in a container is flat doesnt support folders within container,however we can provide names to make it look like its in a folder. This feature is called virtual directories
