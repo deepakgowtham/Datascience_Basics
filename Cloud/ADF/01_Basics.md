@@ -15,15 +15,16 @@
 ## components
 
 - Linked services (Connections)
-- Datasets  -named view of the data within a linked service.
-- Pipelines - grouping of linked service, datasets and activities as a set so it can be managed easily.
+- Datasets  -named view of the data within a linked service.can be used by both linked service and activity.
+- Pipelines - grouping of linked service, datasets and activities as a set so it can be managed easily. chaininng of activities
 - activities- operation made on data like copy, transformation
 - Triggers - We schedule the pipeline, instead of activities independently.
-- parameters - update components dynamically at run time for example update linked service or a dataset for incoming data
-- Integration Runtime -> serverless compute
+- parameters - update components dynamically at run time for example update linked service or a dataset for incoming data -key value pairs in read only configuration.
+- Integration Runtime -> serverless compute - bridge between activity and linked service objects
   
    a. Azure integeration Runtime -> used when data is migrated between two azure cloud services
    b. Self hosted Integration Runtime -> used when data is migrated from on prem to azure cloud service
+   c. Azure-SSIS
   - Control flow - to control the flow of activities within the solution
 - Data Flow (not used more commonly)
 
@@ -42,4 +43,9 @@ two types of integration patterns is supported by ADF.
 # Datafactory process
 <img width="503" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/38383c01-6194-4340-b3dc-992c90233b5e">
 
+# Security
+- to create data factory instance - the contributor or owner role or administrator of the Azure subscription
+- create, and manage child resources in the Azure portal, you must belong to the Data Factory contributor role at the resource group level or above. To create and manage resources with PowerShell or the SDK, the contributor role at the resource level or above is sufficient
+- Contributor role
+<img width="272" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/731c7d12-e4ed-4061-9c8c-1eedf716503b">
 
