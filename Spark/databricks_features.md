@@ -81,3 +81,14 @@ Databricks serverless sql is only available for sql
 
 
 <img width="558" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/4c816188-eaa4-4750-883f-f0f38f34206a">
+
+# Standard vs Premium tier in databricks
+Premium has more features when compared to standard like
+- databricks sql
+- Unity catalog
+- delta sharing
+- audit logs
+- cluster sharing
+
+<img width="600" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/6863745a-eb0e-44ac-9a5e-e7552321421b">
+
