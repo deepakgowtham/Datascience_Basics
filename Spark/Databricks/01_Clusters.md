@@ -1,11 +1,22 @@
 # Cluster types
-- all purpose 
-- job cant be created manually only created by jobs, but can be created from workflows page
-- Pools -clusters created and waiting instead of waiting 5 to 10 mins for cluster creation
-
-**Policies** - way to create clusters with predefined configuraiton.
+- all purpose clusters
+- job clusters cant be created manually only created by jobs, but can be created from workflows page
+- cluster Pools - Ready to use idle vms that will be waiting to reduce cluster creation time.
 
 <img width="467" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/17c4c323-a526-4c8e-adb8-a01419e236aa">
+
+**Policies** - way to create clusters with predefined configuraiton.
+- Admins can create cluster policy to simplfy cluster creation for users.
+- Also to **Hide attributes, fix values and set default attributes.**
+- Manage cost control
+- standardize cluster configuration
+- only available in premium tier
+- definition is written as JSON.
+  
+<img width="265" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d46823c3-e47e-4466-9fca-88da35d4db2c">
+
+<img width="375" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/dbc19e3d-dbb2-4e0d-96c1-473ef90b284c">
+
 
 # Cluster Configuration
 - Single node - same node acts as both master and worker.- doesnt support horizontal scaling
