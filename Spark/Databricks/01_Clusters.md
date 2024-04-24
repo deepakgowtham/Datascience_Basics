@@ -34,7 +34,9 @@
 - Databricks Runtime ML
 - Photon Runtime
 - Databaricks runtime Light
-  <img width="348" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ecf618e6-f2bf-480d-b4be-941071a3e52d">
+  
+<img width="348" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/ecf618e6-f2bf-480d-b4be-941071a3e52d">
+
 # Auto termination
 - clusters getting terminated after x minutes of inactivity default 120 minutes
 
