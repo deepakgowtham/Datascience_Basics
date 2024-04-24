@@ -6,12 +6,15 @@
 <img width="467" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/17c4c323-a526-4c8e-adb8-a01419e236aa">
 
 **Policies** - way to create clusters with predefined configuraiton.
+
 - Admins can create cluster policy to simplfy cluster creation for users.
 - Also to **Hide attributes, fix values and set default attributes.**
 - Manage cost control
+- empowers standard users.
 - standardize cluster configuration
 - only available in premium tier
 - definition is written as JSON.
+
   
 <img width="265" alt="image" src="https://github.com/deepakgowtham/Datascience_Basics/assets/47908891/d46823c3-e47e-4466-9fca-88da35d4db2c">
 
